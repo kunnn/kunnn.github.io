@@ -45,7 +45,8 @@ NexT.utils = NexT.$u = {
 
     $top = $('.back-to-top');
     $(window).on('scroll', function () {
-      $top.toggleClass('back-to-top-on', document.body.scrollTop > THRESHOLD);
+        (document.documentElement.scrollTop != '0')?$top.toggleClass('back-to-top-on', document.documentElement.scrollTop > THRESHOLD):$top.toggleClass('back-to-top-on', document.body.scrollTop > THRESHOLD);
+        
     });
 
     $top.on('click', function () {
