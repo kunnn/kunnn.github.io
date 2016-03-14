@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="First-article," />
+  <meta name="keywords" content="ajax-CORS," />
 
 
 
@@ -57,24 +57,25 @@
 
 
 
-<meta name="description" content="说说为什么选择建立独立博客.
-猴年了那就先给大家讲一个小学课本上关于猴的故事吧 🙉
-理想版：  有一天，一只小猴子下山来。它走到一块玉米地里，看见玉米结得又大又多，非常高兴，就掰了两个，点起一堆火，烤玉米吃，哇，太香了，再摘两个给妈妈尝尝。吃完了玉米，小猴子有点口渴，走到一片瓜地里。它看见满地的西瓜又大又圆，非常高兴，摘了西瓜敲开就吃，哇，好甜好解渴啊。吃完了西瓜，它又摘一个捎给妈妈。它找了一个">
+<meta name="description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在aj">
 <meta property="og:type" content="article">
-<meta property="og:title" content="为什么我会选择建立独立博客">
-<meta property="og:url" content="http://kunn.me/2016/03/13/First-article/index.html">
+<meta property="og:title" content="AJAX跨域之CORS">
+<meta property="og:url" content="http://kunn.me/2016/03/14/ajax-CrossDomain/index.html">
 <meta property="og:site_name" content="谦和">
-<meta property="og:description" content="说说为什么选择建立独立博客.
-猴年了那就先给大家讲一个小学课本上关于猴的故事吧 🙉
-理想版：  有一天，一只小猴子下山来。它走到一块玉米地里，看见玉米结得又大又多，非常高兴，就掰了两个，点起一堆火，烤玉米吃，哇，太香了，再摘两个给妈妈尝尝。吃完了玉米，小猴子有点口渴，走到一片瓜地里。它看见满地的西瓜又大又圆，非常高兴，摘了西瓜敲开就吃，哇，好甜好解渴啊。吃完了西瓜，它又摘一个捎给妈妈。它找了一个">
-<meta property="og:image" content="http://img4.blog.eastmoney.com/m4/m4006094221141466/201505/20150504105501809.jpg">
-<meta property="og:updated_time" content="2016-03-14T16:46:29.000Z">
+<meta property="og:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在aj">
+<meta property="og:updated_time" content="2016-03-14T16:59:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="为什么我会选择建立独立博客">
-<meta name="twitter:description" content="说说为什么选择建立独立博客.
-猴年了那就先给大家讲一个小学课本上关于猴的故事吧 🙉
-理想版：  有一天，一只小猴子下山来。它走到一块玉米地里，看见玉米结得又大又多，非常高兴，就掰了两个，点起一堆火，烤玉米吃，哇，太香了，再摘两个给妈妈尝尝。吃完了玉米，小猴子有点口渴，走到一片瓜地里。它看见满地的西瓜又大又圆，非常高兴，摘了西瓜敲开就吃，哇，好甜好解渴啊。吃完了西瓜，它又摘一个捎给妈妈。它找了一个">
-<meta name="twitter:image" content="http://img4.blog.eastmoney.com/m4/m4006094221141466/201505/20150504105501809.jpg">
+<meta name="twitter:title" content="AJAX跨域之CORS">
+<meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在aj">
 
 
 
@@ -92,7 +93,7 @@
   };
 </script>
 
-  <title> 为什么我会选择建立独立博客 | 谦和 </title>
+  <title> AJAX跨域之CORS | 谦和 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -252,7 +253,7 @@
             
             
               
-                为什么我会选择建立独立博客
+                AJAX跨域之CORS
               
             
           </h1>
@@ -264,8 +265,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-13T16:55:44+08:00" content="2016-03-13">
-              2016-03-13
+            <time itemprop="dateCreated" datetime="2016-03-14T22:25:23+08:00" content="2016-03-14">
+              2016-03-14
             </time>
           </span>
 
@@ -278,8 +279,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Why/" itemprop="url" rel="index">
-                    <span itemprop="name">Why?</span>
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
                   </a>
                 </span>
 
@@ -310,17 +311,81 @@
       
 
       
-        <h1 id="说说为什么选择建立独立博客"><a href="#说说为什么选择建立独立博客" class="headerlink" title="说说为什么选择建立独立博客."></a>说说为什么选择建立独立博客.</h1><ul>
-<li><p>猴年了那就先给大家讲一个小学课本上关于猴的故事吧 🙉</p>
-<h3 id="理想版："><a href="#理想版：" class="headerlink" title="理想版："></a>理想版：</h3><p>  有一天，一只小猴子下山来。它走到一块玉米地里，看见玉米结得又大又多，非常高兴，就掰了两个，点起一堆火，烤玉米吃，哇，太香了，再摘两个给妈妈尝尝。吃完了玉米，小猴子有点口渴，走到一片瓜地里。它看见满地的西瓜又大又圆，非常高兴，摘了西瓜敲开就吃，哇，好甜好解渴啊。吃完了西瓜，它又摘一个捎给妈妈。它找了一个棍子，一头系着玉米，一头绑了一个西瓜，扛在肩上，继续往前走，它走到一棵桃树下，看见满树的桃子又大又红，非常高兴，就放下担子，就上树去摘桃子，哇，桃子又脆又甜啊。小猴子又摘了几个桃子，放到担子上玉米的一头，继续往前走，走着走着，看见一只小兔蹦蹦跳跳的，真可爱。它非常高兴，就对小兔喊：“小兔子，你好，我请你吃烤玉米、西瓜和桃子，好吗？”。小兔子非常高兴，跑过来，边吃边和猴子聊起天来，很快就成了好朋友。太阳下山了，最后它们依依不舍地挥手再见。小兔子说：“小猴子你真棒，你的东西真好吃，和你交朋友真开心，谢谢你。” 🙊—==然并卵情节并不是这样！==</p>
-<h3 id="现实版："><a href="#现实版：" class="headerlink" title="现实版："></a>现实版：</h3><p>  有一天，一只小猴子下山来。它走到一块玉米地里，看见玉米结得又大又多，非常高兴，就掰了一个，扛着往前走。小猴子扛着玉米，走到一棵桃树下。它看见满树的桃子又大又红，非常高兴，就扔了玉米去摘桃子。小猴子捧着几个桃子，走到一片瓜地里。它看见满地的西瓜又大又圆，非常高兴，就扔了桃子去摘西瓜。小猴子抱着一个大西瓜往回走。走着走着，看见一只小兔蹦蹦跳跳的，真可爱。它非常高兴，就扔了西瓜去追小兔。小兔跑进树林子，不见了。小猴子只好空着手回家去。  —对，课本上就是这样写的 🙈<br>  <img src="http://img4.blog.eastmoney.com/m4/m4006094221141466/201505/20150504105501809.jpg" alt=""></p>
-<h3 id="目前的我"><a href="#目前的我" class="headerlink" title="目前的我"></a>目前的我</h3><p>  而目前的我就是这只现实版的猴子，在学习中 看一半这里记点笔记，哪里记点笔记！不便于整理。书看完了，也就真的是完了！并没有给我留下一片云彩！😔或许留了一两片也说不定哦。😄 但也是重复着无用功，或者没有达到应有的效果，所以然并卵。在工作中也是，遇到问题，好不容易解决了，下一次遇到了问题还是个问题！虽然在有道云笔记里记着，但是因为随手乱放的毛病，多了我也找不到了！！所以还是然并卵。</p>
-<p>  所以我需要一个自己喜欢、便于查看的地方记录点滴，这也是我写博客的初衷之一</p>
-<h3 id="质疑"><a href="#质疑" class="headerlink" title="质疑"></a>质疑</h3><p>  朋友会问为什么建立“独立”博客？服务器，域名都要钱,在博客园、OSCHINA等等里面写也挺好啊，而且人多便于交流…其实要说在博客园或者OSCHINA等等地方写博客好处很多很多，我也很认同。<br>  但我为什么还要执意“独立”呢？<br>  1 DIY，不喜过多的约束，自己的随便捯饬！这一点很重要！<br>  2 归属感，我的地盘我做主，对！就是这个感觉。<br>  3 自己的东西自己会好好珍惜，既然建立了博客，就会好好写，不管是记录笔记还是发表感想还是分享经验。而这都是初始我努力学习更新自己知识储备的原动力。<br>  4 身为一个成天捯饬网页的娃，用自己的网站记录自己应该是一件很NICE的事。<br>  5 博客园一类的大网站为了服务于大多数UI做的真的太丑了，-。-让我查查资料还行，对于钟爱极简的我，真没想法在哪上面记录什么。</p>
-<h3 id="成本"><a href="#成本" class="headerlink" title="成本"></a>成本</h3><p>   虽然一年服务器+域名的续费需要花将近 五六百 但是平均到每月也就几十块。不抽烟不喝酒的我，如果连几十块都省不下来！那我就应该好好反省一下自己的人生了！</p>
-<h3 id="so"><a href="#so" class="headerlink" title="so"></a>so</h3><p>   所以本屌认为这钱花的值！<br>   so 俺就建了。</p>
-</li>
-</ul>
+        <p>最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪<br>那么今天洒家就来写一篇记录性的笔记吧！</p>
+<h2 id="一，-首先我们得知道什么叫做跨域"><a href="#一，-首先我们得知道什么叫做跨域" class="headerlink" title="一， 首先我们得知道什么叫做跨域"></a>一， 首先我们得知道什么叫做跨域</h2><p>简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。</p>
+<blockquote>
+<p>Ps 如果你在ajax请求的时候控制台报错，并提示 <em>禁止同源策略…</em> 什么的，那么恭喜你，孩子，你跨域了！😄</p>
+</blockquote>
+<h2 id="二，然后我们还得知道什么是CORS"><a href="#二，然后我们还得知道什么是CORS" class="headerlink" title="二，然后我们还得知道什么是CORS"></a>二，然后我们还得知道什么是CORS</h2><p>CORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。</p>
+<h2 id="三，怎么使用CORS实现跨域"><a href="#三，怎么使用CORS实现跨域" class="headerlink" title="三，怎么使用CORS实现跨域"></a>三，怎么使用CORS实现跨域</h2><p>不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。</p>
+<blockquote>
+<p>XMLHttpRequest在标准浏览器下也得到了升级。</p>
+</blockquote>
+<p><code></code></p>
+<pre><code>var oBtn = document.getElementById(&apos;btn&apos;); ///前端ajax请求
+
+oBtn.onclick = function() {
+
+    var xhr = new XMLHttpRequest();
+     xhr.onload = function () {
+                if (xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            }
+    xhr.open(&apos;get&apos;, &apos;http:www.bbb.com/ajax.php&apos;, true);
+    xhr.send();
+
+}
+
+&lt;?php     /// 后端设置，这里当然需要后端来写。主要是声明header
+header(&apos;Access-Control-Allow-Origin:http://www.aaa.com&apos;);    //这是允许访问该资源的域，也可设置为 *（所以域名）
+echo &apos;hello&apos;;
+</code></pre><p></p>
+<blockquote>
+<p>就这么简单，标准浏览器下跨域就这么简单。</p>
+</blockquote>
+<h2 id="四，-让我们来看看不标准的IE，怎么解决跨域"><a href="#四，-让我们来看看不标准的IE，怎么解决跨域" class="headerlink" title="四， 让我们来看看不标准的IE，怎么解决跨域"></a>四， 让我们来看看不标准的IE，怎么解决跨域</h2><blockquote>
+<p>这里的不兼容，不是指IE不支持CORS方案，而是指IE下没有根据标准对XMLHttpRequest进行改写升级，不过IE大神自己创造了一个支持IE7以上跨域的方法XDomainRequest()  IE6请自行忽略！</p>
+</blockquote>
+<p><code></code></p>
+<pre><code>    var oBtn = document.getElementById(&apos;btn&apos;); ///IE下ajax跨域请求
+    oBtn.onclick = function() {
+
+    var xhr = new XDomainRequest();  ///注意这里
+     xhr.onload = function () {
+                if (xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            }
+    xhr.open(&apos;get&apos;, &apos;http:www.bbb.com/ajax.php&apos;, true);
+    xhr.send();
+
+}
+</code></pre><p></p>
+<h2 id="五，-做兼容"><a href="#五，-做兼容" class="headerlink" title="五， 做兼容"></a>五， 做兼容</h2><p><code></code></p>
+<pre><code>var url = &apos;http:www/baidu.com/xxxx.shtml&apos;; 
+if(XMLHttpRequest)   ///标准浏览器
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+           if (xhr.status == 200) {
+             alert(xhr.responseText);
+           }
+      }
+    xhr.open(&apos;get&apos;, url, true);
+    xhr.send();
+}else if(XDomainRequest){  /// IE
+    var xhr = new XDomainRequest();
+     xhr.onload = function () {
+        alert(xhr.responseText);
+          }
+    xhr.open(&apos;get&apos;, url, true);
+    xhr.send();
+}
+</code></pre><p></p>
+<blockquote>
+<p>ps: 我还才疏学浅，如果哪位同道中人看到代码中哪有BUG，欢迎加我好友学习交流😁联系方式在右侧栏</p>
+</blockquote>
 
       
     </div>
@@ -335,7 +400,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/First-article/" rel="tag">#First-article</a>
+            <a href="/tags/ajax-CORS/" rel="tag">#ajax-CORS</a>
           
         </div>
       
@@ -344,13 +409,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/03/13/MarkDown-One/" rel="next" title="MarkDown 语法入门篇">
+                <i class="fa fa-chevron-left"></i> MarkDown 语法入门篇
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/13/MarkDown-One/" rel="prev" title="MarkDown 语法入门篇">
-                MarkDown 语法入门篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -509,7 +574,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说说为什么选择建立独立博客"><span class="nav-number">1.</span> <span class="nav-text">说说为什么选择建立独立博客.</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#理想版："><span class="nav-number">1.0.1.</span> <span class="nav-text">理想版：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现实版："><span class="nav-number">1.0.2.</span> <span class="nav-text">现实版：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目前的我"><span class="nav-number">1.0.3.</span> <span class="nav-text">目前的我</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质疑"><span class="nav-number">1.0.4.</span> <span class="nav-text">质疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#成本"><span class="nav-number">1.0.5.</span> <span class="nav-text">成本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#so"><span class="nav-number">1.0.6.</span> <span class="nav-text">so</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，-首先我们得知道什么叫做跨域"><span class="nav-number">1.</span> <span class="nav-text">一， 首先我们得知道什么叫做跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，然后我们还得知道什么是CORS"><span class="nav-number">2.</span> <span class="nav-text">二，然后我们还得知道什么是CORS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，怎么使用CORS实现跨域"><span class="nav-number">3.</span> <span class="nav-text">三，怎么使用CORS实现跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，-让我们来看看不标准的IE，怎么解决跨域"><span class="nav-number">4.</span> <span class="nav-text">四， 让我们来看看不标准的IE，怎么解决跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五，-做兼容"><span class="nav-number">5.</span> <span class="nav-text">五， 做兼容</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

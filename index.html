@@ -246,6 +246,135 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/14/ajax-CrossDomain/" itemprop="url">
+                  AJAX跨域之CORS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-14T22:25:23+08:00" content="2016-03-14">
+              2016-03-14
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在ajax请求的时候控制台报错，并提示 禁止同源策略… 什么的，那么恭喜你，孩子，你跨域了！😄
+
+二，然后我们还得知道什么是CORSCORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。
+三，怎么使用CORS实现跨域不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。
+
+XMLHttpRequest在标准浏览器下也得到了升级。
+
+
+var oBtn = document.getElementById(&apos;btn&apos;); ///前端ajax请求
+
+oBtn.onclick = function() {
+
+    var xhr = new XMLHttpRequest();
+     xhr.onload = functi
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/14/ajax-CrossDomain/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/13/MarkDown-One/" itemprop="url">
                   MarkDown 语法入门篇
                 </a>
@@ -504,7 +633,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -512,7 +641,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -521,7 +650,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
