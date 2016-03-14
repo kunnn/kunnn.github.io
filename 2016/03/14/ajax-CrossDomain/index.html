@@ -69,13 +69,15 @@ Ps 如果你在aj">
 一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
 
 Ps 如果你在aj">
-<meta property="og:updated_time" content="2016-03-14T17:05:17.000Z">
+<meta property="og:image" content="http://kunn.me/images/weixin.jpg">
+<meta property="og:updated_time" content="2016-03-14T17:22:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax跨域之CORS">
 <meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
 一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
 
 Ps 如果你在aj">
+<meta name="twitter:image" content="http://kunn.me/images/weixin.jpg">
 
 
 
@@ -364,8 +366,16 @@ echo &apos;hello&apos;;
 </code></pre><p></p>
 <h2 id="五，-做兼容"><a href="#五，-做兼容" class="headerlink" title="五， 做兼容"></a>五， 做兼容</h2><p><code></code></p>
 <pre><code>var url = &apos;http:www/baidu.com/xxxx.shtml&apos;; 
-if(XMLHttpRequest)   ///标准浏览器
+if(XDomainRequest)   /// IE
 {
+var xhr = new XDomainRequest();
+     xhr.onload = function () {
+        alert(xhr.responseText);
+          }
+    xhr.open(&apos;get&apos;, url, true);
+    xhr.send();
+
+}else{  ///标准浏览器
     var xhr = new XMLHttpRequest();
     xhr.onload = function () {
            if (xhr.status == 200) {
@@ -374,18 +384,12 @@ if(XMLHttpRequest)   ///标准浏览器
       }
     xhr.open(&apos;get&apos;, url, true);
     xhr.send();
-}else if(XDomainRequest){  /// IE
-    var xhr = new XDomainRequest();
-     xhr.onload = function () {
-        alert(xhr.responseText);
-          }
-    xhr.open(&apos;get&apos;, url, true);
-    xhr.send();
 }
 </code></pre><p></p>
 <blockquote>
-<p>ps: 我还才疏学浅，如果哪位同道中人看到代码中哪有BUG，欢迎加我好友学习交流😁联系方式在右侧栏</p>
+<p>ps: 我还才疏学浅，如果哪位同道中人看到代码中哪有BUG或者优化改进的地方，欢迎加我好友学习交流😁</p>
 </blockquote>
+<p><img src="http://kunn.me/images/weixin.jpg" alt="我的微信" title="欢迎加我微信学习交流"></p>
 
       
     </div>
