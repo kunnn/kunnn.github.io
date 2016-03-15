@@ -246,8 +246,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/15/H5-LocalStorage/" itemprop="url">
-                  Html5之LocalStorage
+                <a class="post-title-link" href="/2016/03/15/HTML5-LocalStorage/" itemprop="url">
+                  Html5之本地存储
                 </a>
               
             
@@ -290,8 +290,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/15/H5-LocalStorage/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/H5-LocalStorage/" itemprop="commentsCount"></span>
+                <a href="/2016/03/15/HTML5-LocalStorage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/15/HTML5-LocalStorage/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -315,12 +315,23 @@
       
         
           
-           之前在项目中用到了LocalStorage。今天回过头做个笔记，以免忘记。
-什么是LocalStorage？
-          
+          一，为什么要用Storage 说到本地存储，大家肯定会想到Cookie。但是由于Cookie太小,大概只能存储4KB的数据，并且IE6每个域名只允许存20个Cookie。这对于现如今的web前后端越来越多的交互，4kb的存储显然是不够的。所以我就就需要用到H5的Storage。当然cookie并不是一无是处，它兼容性好，基本都兼容，如果存储的数据很小，首选当然还是cookie。
+二，Storage的兼容情况
+Storage 的兼容情况很好 IE 8+, Firefox, Opera, Chrome, 和 Safari都支持Web， 只有IE 7及 更早版本不支持。  PS：开发中 Storage 在IE下需要我们的页面运行在服务器或者本地服务器才允许访问。 
+
+三，Storage说明
+ Storage 又分为两种  即 sessionStorage 与 localStorage
+
+sessionStorage从字面意思上我们就可以看出sessionStorage是将数据保存在session 页面关闭，存储就没了并且只能在本页面访问，其余页面不可访问。
+localStorage责是将数据保存在本地，除非主动删除，不然永远都不会消失，共享，同域名下访问畅通无阻。
+
+Ps: Storage 官方建议每个网站最大存储为5M
+
+四，Storage API然而不管是sessionStorage
+          ...
 
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/15/H5-LocalStorage/#more" rel="contents">
+            <a class="btn" href="/2016/03/15/HTML5-LocalStorage/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -792,7 +803,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
