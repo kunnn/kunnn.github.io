@@ -70,7 +70,7 @@ Ps 如果你在aj">
 
 Ps 如果你在aj">
 <meta property="og:image" content="http://kunn.me/images/weixin.jpg">
-<meta property="og:updated_time" content="2016-03-14T17:22:17.000Z">
+<meta property="og:updated_time" content="2016-03-15T12:52:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax跨域之CORS">
 <meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
@@ -365,8 +365,9 @@ echo &apos;hello&apos;;
 }
 </code></pre><p></p>
 <h2 id="五，-做兼容"><a href="#五，-做兼容" class="headerlink" title="五， 做兼容"></a>五， 做兼容</h2><p><code></code></p>
-<pre><code>var url = &apos;http:www/baidu.com/xxxx.shtml&apos;; 
-if(XDomainRequest)   /// IE
+<pre><code>var IE678 = navigator.userAgent.indexOf(&quot;MSIE 9.0&quot;)&gt;0||navigator.userAgent.indexOf(&quot;MSIE 7.0&quot;)&gt;0||navigator.appVersion.match(/8./i)==&quot;8.&quot;
+var url = &apos;http:www/baidu.com/xxxx.shtml&apos;; 
+if(IE678)   /// IE
 {
 var xhr = new XDomainRequest();
      xhr.onload = function () {
