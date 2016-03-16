@@ -246,6 +246,138 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/16/HTML5-One/" itemprop="url">
+                  HTML5之语义化标签与Form控件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-16T22:44:20+08:00" content="2016-03-16">
+              2016-03-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/HTML5/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML5</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/16/HTML5-One/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/16/HTML5-One/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          一，语义化标签
+&lt;header&gt;&lt;/header&gt; 页眉  主要用于页面的头部的信息介绍，也可用于板块头部
+&lt;hgroup&gt;&lt;/hgroup&gt; 页面上的一个标题组合,一个标题和一个子标题，或者标语的组合
+&lt;nav&gt;&lt;/nav&gt; 导航 一个带连接的列表
+&lt;footer&gt;&lt;/footer&gt; 页脚  页面的底部 或者 版块底部
+&lt;section&gt;&lt;/section&gt;  页面上的版块用于划分页面上的不同区域,或者划分文章里不同的节
+&lt;article&gt;&lt;/article&gt;  用来在页面中表示一套结构完整且独立的内容部分
+&lt;aside&gt;&lt;/aside&gt; 附属信息，侧栏
+&lt;figure&gt; &lt;/figure&gt; 用于对元素进行组合。一般用于图片或视频
+&lt;figcaption&gt;&lt;/figcaption&gt; figure的子元素 用于对figure的内容 进行说明
+&lt;time&gt;&lt;/time&gt;用来表现时间或日期
+&lt;datalist&gt;&lt;/datalist&gt;选项列表。与 input 元素配合使用，来定义 input 可能的值
+&lt;details&g
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/03/16/HTML5-One/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/15/HTML5-LocalStorage/" itemprop="url">
                   Html5之本地存储
                 </a>
@@ -315,26 +447,19 @@
       
         
           
-          
-一，为什么要用Storage说到本地存储，大家肯定会想到Cookie。但是由于Cookie太小,大概只能存储4KB的数据，并且IE6每个域名只允许存20个Cookie。这对于现如今的web前后端越来越多的交互，4kb的存储显然是不够的。所以我就就需要用到H5的Storage。当然cookie并不是一无是处，它兼容性好，基本都兼容，如果存储的数据很小，首选当然还是cookie。
-
+          一，为什么要用Storage 说到本地存储，大家肯定会想到Cookie。但是由于Cookie太小,大概只能存储4KB的数据，并且IE6每个域名只允许存20个Cookie。这对于现如今的web前后端越来越多的交互，4kb的存储显然是不够的。所以我就就需要用到H5的Storage。当然cookie并不是一无是处，它兼容性好，基本都兼容，如果存储的数据很小，首选当然还是cookie。
 二，Storage的兼容情况
-
-
 Storage 的兼容情况很好 IE 8+, Firefox, Opera, Chrome, 和 Safari都支持Web， 只有IE 7及 更早版本不支持。  PS：开发中 Storage 在IE下需要我们的页面运行在服务器或者本地服务器才允许访问。 
-
 
 三，Storage说明及API
  Storage 又分为两种  即 sessionStorage 与 localStorage
-
-
 
 sessionStorage从字面意思上我们就可以看出sessionStorage是将数据保存在session 页面关闭，存储就没了并且只能在本页面访问，其余页面不可访问。
 localStorage责是将数据保存在本地，除非主动删除，不然永远都不会消失，共享，同域名下访问畅通无阻。
 
 Ps: Storage 官方建议每个网站最大存储为5M
 
-然而不管是sessionStorage还是l
+然而不管是sessionStorage还是localSt
           ...
 
           <div class="post-more-link text-center">
@@ -793,7 +918,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -810,7 +935,7 @@ MarkDown 官方网址 http://daringfireball.net/projects/markdown/
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
