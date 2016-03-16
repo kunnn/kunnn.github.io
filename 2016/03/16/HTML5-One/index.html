@@ -72,7 +72,7 @@
 &amp;lt;nav&amp;gt;&amp;lt;/nav&amp;gt; 导航 一个带连接的列表
 &amp;lt;footer&amp;gt;&amp;lt;/footer&amp;gt; 页脚  页面的底">
 <meta property="og:image" content="http://kunn.me/images/weixin.jpg">
-<meta property="og:updated_time" content="2016-03-16T17:33:17.000Z">
+<meta property="og:updated_time" content="2016-03-16T23:29:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Html5之语义化标签与Form控件">
 <meta name="twitter:description" content="一，语义化标签
@@ -341,22 +341,19 @@
 <li><code>&lt;address&gt;&lt;/address&gt;</code> 定义文章 或页面作者的详细联系信息</li>
 <li><code>&lt;mark&gt;&lt;/mark&gt;</code> 需要标记的词或句子</li>
 <li><code>&lt;keygen&gt;</code>给表单添加一个公钥</li>
-<li><p><code>&lt;progress&gt;&lt;progress&gt;</code>定义进度条</p>
-<h3 id="兼容处理"><a href="#兼容处理" class="headerlink" title="兼容处理"></a>兼容处理</h3><p>标签<br>针对IE6-8这些不支持HTML5语义化标签的浏览器我们可以使用javascript来解决他们在页面的头部加如下代码：</p>
-<pre><code>&lt;script&gt;
-    document.createElement(“header”);
-    document.createElement(“nav”);
-    document.createElement(“footer”);
-    ……
-&lt;/script&gt;
-</code></pre><blockquote>
-<p>Ps:HTML5语义化标签在IE6-8下，我们用js创建出来之后，他是不会有任何默认样式的甚至是 display，所以在样式表里 要对这些标签定义一下 它默认的display</p>
-</blockquote>
-<p>更方便简单的方法引用 html5shiv.js插件解决，如下：</p>
-<pre><code>&lt;script src=&quot;//cdn.bootcss.com/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt;
-</code></pre></li>
+<li><code>&lt;progress&gt;&lt;progress&gt;</code>定义进度条</li>
 </ol>
-<h2 id="Form新增控件"><a href="#Form新增控件" class="headerlink" title="Form新增控件"></a>Form新增控件</h2><p>  新的输入型控件</p>
+<h3 id="兼容处理"><a href="#兼容处理" class="headerlink" title="兼容处理"></a>兼容处理</h3><p> 标签<br>    针对IE6-8这些不支持HTML5语义化标签的浏览器我们可以使用javascript来解决他们在页面的头部加如下代码：</p>
+<pre><code>       &lt;script&gt;
+           document.createElement(“header”);
+           document.createElement(“nav”);
+           document.createElement(“footer”);
+           ……
+       &lt;/script&gt;
+&gt; Ps:HTML5语义化标签在IE6-8下，我们用js创建出来之后，他是不会有任何默认样式的甚至是 display，所以在样式表里 要对这些标签定义一下 它默认的display
+</code></pre><p>   更方便简单的方法引用 html5shiv.js插件解决，如下：</p>
+<pre><code>&lt;script src=&quot;//cdn.bootcss.com/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><h2 id="Form新增控件"><a href="#Form新增控件" class="headerlink" title="Form新增控件"></a>Form新增控件</h2><p>  新的输入型控件</p>
 <ol>
 <li>email  :  电子邮箱文本框，跟普通的没什么区别,当输入不是邮箱的时候，验证通不过。移动端的键盘会有变化</li>
 <li>tel   :   电话号码</li>
