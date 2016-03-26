@@ -58,18 +58,20 @@
 
 
 <meta name="description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是在">
+avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AvalonJS">
 <meta property="og:url" content="http://kunn.me/2016/03/20/avalonJS/index.html">
 <meta property="og:site_name" content="谦和">
 <meta property="og:description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是在">
-<meta property="og:updated_time" content="2016-03-20T09:31:16.000Z">
+avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
+<meta property="og:image" content="http://s.qdcdn.com/cl/10207950,800,450.jpg">
+<meta property="og:updated_time" content="2016-03-26T07:31:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AvalonJS">
 <meta name="twitter:description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是在">
+avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
+<meta name="twitter:image" content="http://s.qdcdn.com/cl/10207950,800,450.jpg">
 
 
 
@@ -312,8 +314,10 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
       
 
       
-        <h2 id="一，关于AvalonJs"><a href="#一，关于AvalonJs" class="headerlink" title="一，关于AvalonJs"></a>一，关于AvalonJs</h2><p>avalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。</p>
+        <p><img src="http://s.qdcdn.com/cl/10207950,800,450.jpg" alt="图片"></p>
+<h2 id="一，关于AvalonJs"><a href="#一，关于AvalonJs" class="headerlink" title="一，关于AvalonJs"></a>一，关于AvalonJs</h2><p>avalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。</p>
 <p>avalonJs根据兼容性和平台的不同分为三个版本：<br>    1、兼容IE6到及其他浏览器的avalon.js。<br>    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。<br>    3、适合运行于手机端，只是在avalon.modern.js的基础上加上了触屏事件支持的avalon.mobile.js。</p>
+<a id="more"></a>
 <h2 id="二，为什么选择AvalonJs"><a href="#二，为什么选择AvalonJs" class="headerlink" title="二，为什么选择AvalonJs"></a>二，为什么选择AvalonJs</h2><h3 id="先来看看AvalonJS的优点"><a href="#先来看看AvalonJS的优点" class="headerlink" title="先来看看AvalonJS的优点"></a>先来看看AvalonJS的优点</h3><p>   1、使用简单，在HTML中添加绑定，在JS中用avalon.define定义ViewModel，再调用avalon.scan方法，它就能动了！<br>   2、兼容到 IE6 (其他MVVM框架，KnockoutJS(IE6), AngularJS(IE9), EmberJS(IE8), WinJS(IE9) )，另有avalon.mobile，它可以更高效地运行于IE10等新版本浏览器中<br>   3、没有任何依赖，不到5000行，压缩后不到50KiB<br>   4、支持管道符风格的过滤函数，方便格式化输出<br>   5、局部刷新的颗粒度已细化到一个文本节点，特性节点<br>   6、要操作的节点，在第一次扫描就与视图刷新函数相绑定，并缓存起来，因此没有选择器出场的余地。<br>   7、让DOM操作的代码近乎绝迹<br>   8、使用类似CSS的重叠覆盖机制，让各个ViewModel分区交替地渲染页面<br>   9、节点移除时，智能卸载对应的视图刷新函数，节约内存<br>   10、操作数据即操作DOM，对ViewModel的操作都会同步到View与Model去<br>   11、自带AMD模块加载器，省得与其他加载器进行整合。</p>
 <blockquote>
 <p>Ps 此段出自: 知乎 作者：<a href="https://www.zhihu.com/question/27791075/answer/38830138" target="_blank" rel="external">汤威</a></p>

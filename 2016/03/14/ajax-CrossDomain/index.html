@@ -60,7 +60,7 @@
 <meta name="description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
 一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
 
-Ps 如果你在aj">
+Ps 如果你在a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ajax跨域之CORS">
 <meta property="og:url" content="http://kunn.me/2016/03/14/ajax-CrossDomain/index.html">
@@ -68,16 +68,17 @@ Ps 如果你在aj">
 <meta property="og:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
 一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
 
-Ps 如果你在aj">
+Ps 如果你在a">
+<meta property="og:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
 <meta property="og:image" content="http://kunn.me/images/weixin.jpg">
-<meta property="og:updated_time" content="2016-03-16T16:57:46.000Z">
+<meta property="og:updated_time" content="2016-03-26T07:31:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax跨域之CORS">
 <meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
 一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
 
-Ps 如果你在aj">
-<meta name="twitter:image" content="http://kunn.me/images/weixin.jpg">
+Ps 如果你在a">
+<meta name="twitter:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
 
 
 
@@ -320,11 +321,13 @@ Ps 如果你在aj">
       
 
       
-        <p>最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪<br>那么今天洒家就来写一篇记录性的笔记吧！</p>
+        <p><img src="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg" alt="avalonJs"></p>
+<p>最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪<br>那么今天洒家就来写一篇记录性的笔记吧！</p>
 <h2 id="一，-首先我们得知道什么叫做跨域"><a href="#一，-首先我们得知道什么叫做跨域" class="headerlink" title="一， 首先我们得知道什么叫做跨域"></a>一， 首先我们得知道什么叫做跨域</h2><p>简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。</p>
 <blockquote>
 <p>Ps 如果你在ajax请求的时候控制台报错，并提示 <em>禁止同源策略…</em> 什么的，那么恭喜你，孩子，你跨域了！😄</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="二，然后我们还得知道什么是CORS"><a href="#二，然后我们还得知道什么是CORS" class="headerlink" title="二，然后我们还得知道什么是CORS"></a>二，然后我们还得知道什么是CORS</h2><p>CORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。</p>
 <h2 id="三，怎么使用CORS实现跨域"><a href="#三，怎么使用CORS实现跨域" class="headerlink" title="三，怎么使用CORS实现跨域"></a>三，怎么使用CORS实现跨域</h2><p>不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。</p>
 <blockquote>
