@@ -333,51 +333,8 @@
 var abc;      // 1.只声明但未赋值的变量，值为undefined     2.使用var 声明的变量为显示声明，如在函数内部声明则为局部变量，在外部声明即为全局变量
 
 通过赋值运算符 = 为其赋值
-abc = &#39;abc111&#39;   // 1.把字符串abc111赋值给变量abc  2.变量可为数字，字符串，布尔值, 数组, 对象, null, undefind
-
-也可以在声明变量的同时为其赋值
-var abc = &#39;abc&#39;
-
-省略var声明变量
-` abb = 25;       // 隐式生命变量，这样声明的变量为全局变量，即使写在函数内部也为全局变量。即没通过var声明的变量都为隐式全局变量。我们应该尽可能的避免使用全局变量，杜绝使用省略var的声明方式，不管是局部还是全局都用显示声明。
-
-
-3. 常量
-使用关键字 const 声明常量
-const abc = 7;  // 1.如果我们只声明为赋值的话同变量一样为undefind，2.如果给一个常量再次赋值，这个常量值不会发生改变，
-
-
-4. 函数
-函数声明与调用
-function sun(a,b){   //声明，sun为函数名，a,b为参数，参数可为N多个
-   return Number(a)+Number(b)     //函数体  ruturn出a,b相加的结果，Number()把a的值转换为数字
-}
-sun(1,2)    //调用
-
-
-
-自执行匿名函数写法
- （function(){
-    alert(&apos;asd&apos;)
- }())    //jslint推荐写法，方便阅读
-
-（function(){
-    alert(&apos;sad&apos;)
- })()
-
-
-5. 对象
-可以通过对象字面量来生成一个对象，对象字面量表达式由大括号{}括起，内部有属性名和属性值
-var obj = {属性名：属性值，属性名：属性值，。。。}     // 1.属性值可为任意类型。2.可以通过obj.属性名 来访问对应属性值也可通过obj[&apos;属性名&apos;]的方式来访问对应属性值
-
-
-6. new 表达式
-js中new表达式的作用是生成一个对象
-var obj = new object();  等同于  var obj = {};
-
-
-
-          
+abc = &#39;abc111&#39;   // 1.把字符串abc111赋值给变量abc  
+          ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/26/Js篇之温故/#more" rel="contents">
@@ -498,39 +455,7 @@ var obj = new object();  等同于  var obj = {};
           
           一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
 avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是在avalon.modern.js的基础上加上了触屏事件支持的avalon.mobile.js。
-二，为什么选择AvalonJs先来看看AvalonJS的优点   1、使用简单，在HTML中添加绑定，在JS中用avalon.define定义ViewModel，再调用avalon.scan方法，它就能动了！   2、兼容到 IE6 (其他MVVM框架，KnockoutJS(IE6), AngularJS(IE9), EmberJS(IE8), WinJS(IE9) )，另有avalon.mobile，它可以更高效地运行于IE10等新版本浏览器中   3、没有任何依赖，不到5000行，压缩后不到50KiB   4、支持管道符风格的过滤函数，方便格式化输出   5、局部刷新的颗粒度已细化到一个文本节点，特性节点   6、要操作的节点，在第一次扫描就与视图刷新函数相绑定，并缓存起来，因此没有选择器出场的余地。   7、让DOM操作的代码近乎绝迹   8、使用类似CSS的重叠覆盖机制，让各个ViewModel分区交替地渲染页面   9、节点移除时，智能卸载对应的视图刷新函数，节约内存   10、操作数据即操作DOM，对ViewModel的操作都会同步到View与Model去   11、自带AMD模块加载器，省得与其他加载器进行整合。
-
-Ps 此段出自: 知乎 作者：汤威
-
-再来看看AvalonJs的缺点1，对数组的过滤没有angular那么方面，avalon的过滤器只能用于ms-text, ms-html(1.5版本好了很多)2，没有英文文档，宣传受到限制（许多人也误把我在博客园的入门教程当成官网，其实官网是在GITHUB上 http://avalonjs.github.io/）3，OniUI的皮肤不够好看。（ps:OmiUI暂不支持1.5版本，avalonJs有AvalonUI-Bootstrap项目）
-
-Ps 此段出自: 知乎 作者：司徒正美
-
-三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-    &lt;title&gt;first&lt;/title&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;script src=&quot;//cdn.bootcss.com/avalon.js/1.5.5/avalon.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        var vm = avalon.define({
-            $id: &quot;test&quot;,
-            name: &quot;谦和&quot;
-        })
-    &lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body ms-controller=&quot;test&quot;&gt;
-    &lt;input ms-duplex=&quot;name&quot;&gt;
-    &lt;p&gt;Hello,{{name}}!&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-
-Ps 复制到html文件在浏览器查看效果。MVVM就这么简单！
-
-注释：    1、&lt;body ms-controller=&quot;test&quot;&gt;中的 ms-controller ，用来声明avalon的作用域并且需指定控制域名。类似于angularjs中的 ng-controller。在一个HTML文件中我们可以定义多个 ms-controller。Ps： 一个控制域与一个Model相对应，当Model中的数据发生变化，与之对应的控制域的DOM会自动进行变化。    2、avalon.define()在avalon中，我们用 avalon.define({…}) 的形式来定义一个Model实例（其参数可以看做一个avalon数据对象），其中的$id是内置属性，对应所要扫描和监控的控制域名。    3、avalon使
+二，为什么选择AvalonJs先来看看AvalonJS的优点   1、使用简单，在HTML中添加绑定，在JS中用avalon.define定义ViewModel，再调用avalon.scan方法，它就能动了！   2、兼容到 IE6 (其他MVVM框架，KnockoutJS(IE6), AngularJ
           ...
 
           <div class="post-more-link text-center">
@@ -658,65 +583,7 @@ Ps 复制到html文件在浏览器查看效果。MVVM就这么简单！
 &lt;section&gt;&lt;/section&gt;  页面上的版块用于划分页面上的不同区域,或者划分文章里不同的节
 &lt;article&gt;&lt;/article&gt;  用来在页面中表示一套结构完整且独立的内容部分
 &lt;aside&gt;&lt;/aside&gt; 附属信息，侧栏
-&lt;figure&gt; &lt;/figure&gt; 用于对元素进行组合。一般用于图片或视频
-&lt;figcaption&gt;&lt;/figcaption&gt; figure的子元素 用于对figure的内容 进行说明
-&lt;time&gt;&lt;/time&gt;用来表现时间或日期
-&lt;datalist&gt;&lt;/datalist&gt;选项列表。与 input 元素配合使用，来定义 input 可能的值
-&lt;details&gt;&lt;/details&gt;用于描述文档或文档某个部分的细节,该元素用于摘录引用等 应该与页面的主要内容区分开的其他内容
-&lt;summary&gt;&lt;/summary&gt; details 元素的标题
-&lt;dialog&gt;&lt;/dialog&gt;定义一段对话
-&lt;address&gt;&lt;/address&gt; 定义文章 或页面作者的详细联系信息
-&lt;mark&gt;&lt;/mark&gt; 需要标记的词或句子
-&lt;keygen&gt;给表单添加一个公钥
-&lt;progress&gt;&lt;progress&gt;定义进度条
-
-兼容处理 标签    针对IE6-8这些不支持HTML5语义化标签的浏览器我们可以使用javascript来解决他们在页面的头部加如下代码：
-       &lt;script&gt;
-           document.createElement(“header”);
-           document.createElement(“nav”);
-           document.createElement(“footer”);
-           ……
-       &lt;/script&gt;
-&gt; Ps:HTML5语义化标签在IE6-8下，我们用js创建出来之后，他是不会有任何默认样式的甚至是 display，所以在样式表里 要对这些标签定义一下 它默认的display
-   更方便简单的方法引用 html5shiv.js插件解决，如下：
-&lt;script src=&quot;//cdn.bootcss.com/html5shiv/r29/html5.min.js&quot;&gt;&lt;/script&gt;
-Form新增控件  新的输入型控件
-
-email  :  电子邮箱文本框，跟普通的没什么区别,当输入不是邮箱的时候，验证通不过。移动端的键盘会有变化
-tel   :   电话号码
-url   :   网页的URL
-search  :  搜索引擎 chrome下输入文字后，会多出一个关闭的X
-range  :  特定范围内的数值选择器。 range下面有三个特定属性 min最小数值、max最大数值、step每次移动走几步
-number  :  只能包含数字的输入框
-color  :  颜色选择器
-datetime  :  显示完整日期
-datetime-local  :  显示完整日期，不含时区
-time  :  显示时间，不含时区
-date  :    显示日期
-week  :  显示周
-month  :  显示月
-
-新的表单特性和函数
-placeholder  :  输入框提示信息
-autocomplete  :  是否保存用户输入值
-
-ps: 默认为on，关闭提示选择off
-
-
-autofocus  :  指定表单获取输入焦点
-
-list和datalist  :  为输入框构造一个选择列表
-
-ps: list值为datalist标签的id
-
-
-required  :  此项必填，不能为空
-
-Pattern : 正则验证  pattern=”\d{1,5}“
-Formaction 在submit里定义提交地址
-
-表单验证
-v
+&lt;figure&gt; &lt;/figure&gt; 用于对
           ...
 
           <div class="post-more-link text-center">
@@ -843,52 +710,8 @@ Storage 的兼容情况很好 IE 8+, Firefox, Opera, Chrome, 和 Safari都支持
 三，Storage说明及API
  Storage 又分为两种  即 sessionStorage 与 localStorage
 
-sessionStorage从字面意思上我们就可以看出sessionStorage是将数据保存在session 页面关闭，存储就没了并且只能在本页面访问，其余页面不可访问。
-localStorage责是将数据保存在本地，除非主动删除，不然永远都不会消失，共享，同域名下访问畅通无阻。
 
-Ps: Storage 官方建议每个网站最大存储为5M
-
-然而不管是sessionStorage还是localStorage 他们的API和使用方法都是相同的，除了前者为临时性储存并且为不共享，后者为永久性储存并且同域名下共享外他们几乎一样。
-setItem()设置数据，key\value类型，类型都是字符串可以用获取属性的形式操作
-    window.sessionStorage.setItem(key,value);    //设置
-    window.localStorage.setItem(key,value);    //设置
-
-
-getItem()获取数据，通过key来获取到相应的value
-    window.sessionStorage.setItem(key);    //获取
-    window.localStorage.setItem(key);    //获取
-
-
-removeItem()删除数据，通过key来删除相应的value
-    window.sessionStorage.removeItem(key);    //删除
-    window.localStorage.removeItem(key);    //删除
-
-
-clear()删除全部存储的值
-    window.sessionStorage.clear();    //删除全部
-    window.localStorage.clear();    //删除全部
-
-
-key(index)指定index获取到key的名称,index为索引值
-存储事件当数据有修改或删除的情况下，就会触发storage事件Key : 修改或删除的key值，如果调用clear(),key为nullnewValue  :  新设置的值，如果调用removeStorage(),key为nulloldValue :  调用改变前的value值storageArea : 当前的storage对象url :  触发该脚本变化的文档的url
-  window.addEventListener('storage',function(ev)
-    {  //在对数据进行改变的窗口对象上是不会触发的  
-        alert('变变变);
-        console.log( ev.key );
-        console.log( ev.newValue );
-        console.log( ev.oldValue );
-        console.log( ev.storageArea );
-        console.log( ev.url );
-        }
-
-
-
- Ps:可同时开启两个相同的页面，修改一个页面的数据，观察另一个页面的变化
-ps: 小弟还才疏学浅，如果哪位同道中人看到代码中哪有BUG或者优化改进的地方，欢迎加我好友学习交流😁
-
-
-
-          
+          ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/15/HTML5-LocalStorage/#more" rel="contents">
@@ -1013,66 +836,7 @@ ps: 小弟还才疏学浅，如果哪位同道中人看到代码中哪有BUG或�
 Ps 如果你在ajax请求的时候控制台报错，并提示 禁止同源策略… 什么的，那么恭喜你，孩子，你跨域了！😄
 
 二，然后我们还得知道什么是CORSCORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。
-三，怎么使用CORS实现跨域不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。
-
-XMLHttpRequest在标准浏览器下也得到了升级。
-
-
-var oBtn = document.getElementById(&apos;btn&apos;); ///前端ajax请求
-
-oBtn.onclick = function() {
-
-    var xhr = new XMLHttpRequest();
-     xhr.onload = function () {
-                if (xhr.status == 200) {
-                    alert(xhr.responseText);
-                }
-            }
-    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
-    xhr.send();
-
-}
-
-&lt;?php     /// 后端设置，这里当然需要后端来写。主要是声明header
-header(&apos;Access-Control-Allow-Origin:http://www.aaa.com&apos;);    //这是允许访问该资源的域，也可设置为 *（所以域名）
-echo &apos;hello&apos;;
-
-
-就这么简单，标准浏览器下跨域就这么简单。
-
-四， 让我们来看看不标准的IE，怎么解决跨域
-这里的不兼容，不是指IE不支持CORS方案，而是指IE下没有根据标准对XMLHttpRequest进行改写升级，不过IE大神自己创造了一个支持IE7以上跨域的方法XDomainRequest()  IE6请自行忽略！
-
-
-    var oBtn = document.getElementById(&apos;btn&apos;); ///IE下ajax跨域请求
-    oBtn.onclick = function() {
-
-    var xhr = new XDomainRequest();  ///注意这里
-     xhr.onload = function () {
-               alert(xhr.responseText);
-            }
-
-    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
-    xhr.send();
-
-}
-
-五， 做兼容
-var IE678 = navigator.userAgent.indexOf(&quot;MSIE 9.0&quot;)&gt;0||navigator.userAgent.indexOf(&quot;MSIE 7.0&quot;)&gt;0||navigator.appVersion.match(/8./i)==&quot;8.&quot;
-var url = &apos;http://www.bbb.com.xxxx.php&apos;; 
-if(IE678)   /// IE
-{
-var xhr = new XDomainRequest();
-     xhr.onload = function () {
-        alert(xhr.responseText);
-          }
-    xhr.open(&apos;get&apos;, url, true);
-    xhr.send();
-
-}else{  ///标准浏览器
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-         
+三，怎么使用CORS实现跨域不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或
           ...
 
           <div class="post-more-link text-center">
@@ -1198,56 +962,8 @@ MarkDown 是一种可以使用普通文本编辑器编写的标记语言，通�
  
 
 Ps: 这么高大上的图片，当然来源自网络。我使用的是Brackets
-MarkDown 官方网址 http://daringfireball.net/projects/markdown/ 
-
-二 为什么学习MarkDown首先，Markdown 可将你输入的任何文本转为 HTML，你可以用它来编写博客、文档和网页。你还可以直接在 Markdown 文档中书写 HTML，如果某些功能 Markdown 不具备的或者你忘记了语法，你可以直接用 HTML 来编写，因为 Markdown 能理解两种格式。
-你不一定需要在你的网站上安装 Markdown 就可以使用它，它是一个非常方便的写作语言，如果你不想转为 HTML ，Markdown 仍是很好的用来格式化纯文本的方法，无需一些富文本编辑器。但如果你需要发布到 Web 上，当然 HTML 是最适合的。
-而且Markdown 语法简单、简洁干净，没有HTML那么多的标签，解放你的双眼，是我们写Blog的不二之选。
-三 下面是我现学的MarkDown常用语法
-标题设置
-第一种：
-
-大标题    Ps: 在想变成大标题的下一行加三个=== 小图标责为三个---
-===
-小标题
----
-第二种：
-
-#h1
-##h2
-###h3
-.....
-
-块注释
-&gt; 需要注释的内容 
-
-斜体 下划线 粗体
-斜体： *1*   下划线： _1_   粗体：**11**   
-
-无序列表
-* 列表名
-* 列表名
-
-有序列表
-1. 列表名
-2. 列表名
-3. 列表名
-ps:主要空格 1后面是英文状态下的。
-
-链接
-如 [谦和的小站](http://kunn.me)[3].  
- 谦和的小站
-
-图片（Images）
-![alt text](imgUrl &quot;Title&quot;)
-![我的微信](http://kunn.me/images/weixin.jpg &quot;我的微信&quot;)
- 
-
-引用代码示例 实现方式有两种： 第一种：简单文字出现一个代码框。使用&lt;blockquote&gt;。（不是单引号    而是左上角的ESC下面~中的） 第二种：大片文字需要实现代码框。使用Tab和四个空格。
-脚注（footnote） 实现方式如下： 谦和^hello
-
-
-          
+MarkDown 官方网址 http://daringfireball.net/projects
+          ...
 
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/13/MarkDown-One/#more" rel="contents">
