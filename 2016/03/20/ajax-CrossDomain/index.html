@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="MVVM," />
+  <meta name="keywords" content="ajax-CORS," />
 
 
 
@@ -57,21 +57,28 @@
 
 
 
-<meta name="description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
+<meta name="description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AvalonJS">
-<meta property="og:url" content="http://kunn.me/2016/03/20/avalonJS/index.html">
+<meta property="og:title" content="Ajax跨域之CORS">
+<meta property="og:url" content="http://kunn.me/2016/03/20/ajax-CrossDomain/index.html">
 <meta property="og:site_name" content="谦和">
-<meta property="og:description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
-<meta property="og:image" content="http://s.qdcdn.com/cl/10207950,800,450.jpg">
-<meta property="og:updated_time" content="2016-03-26T07:31:26.000Z">
+<meta property="og:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在a">
+<meta property="og:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
+<meta property="og:image" content="http://kunn.me/images/weixin.jpg">
+<meta property="og:updated_time" content="2016-03-27T16:25:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AvalonJS">
-<meta name="twitter:description" content="一，关于AvalonJsavalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。
-avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6到及其他浏览器的avalon.js。    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。    3、适合运行于手机端，只是">
-<meta name="twitter:image" content="http://s.qdcdn.com/cl/10207950,800,450.jpg">
+<meta name="twitter:title" content="Ajax跨域之CORS">
+<meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
+一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+
+Ps 如果你在a">
+<meta name="twitter:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
 
 
 
@@ -89,7 +96,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
   };
 </script>
 
-  <title> AvalonJS | 谦和 </title>
+  <title> Ajax跨域之CORS | 谦和 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +256,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
             
             
               
-                AvalonJS
+                Ajax跨域之CORS
               
             
           </h1>
@@ -261,7 +268,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-20T16:44:20+08:00" content="2016-03-20">
+            <time itemprop="dateCreated" datetime="2016-03-20T22:25:23+08:00" content="2016-03-20">
               2016-03-20
             </time>
           </span>
@@ -275,8 +282,8 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/AvalonJs/" itemprop="url" rel="index">
-                    <span itemprop="name">AvalonJs</span>
+                  <a href="/categories/Notes/" itemprop="url" rel="index">
+                    <span itemprop="name">Notes</span>
                   </a>
                 </span>
 
@@ -291,8 +298,8 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/20/avalonJS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/avalonJS/" itemprop="commentsCount"></span>
+                <a href="/2016/03/20/ajax-CrossDomain/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/20/ajax-CrossDomain/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -314,46 +321,85 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
       
 
       
-        <p><img src="http://s.qdcdn.com/cl/10207950,800,450.jpg" alt="图片"></p>
-<h2 id="一，关于AvalonJs"><a href="#一，关于AvalonJs" class="headerlink" title="一，关于AvalonJs"></a>一，关于AvalonJs</h2><p>avalonJs是一个WEB前端的MVVM框架，由司徒正美开发和维护。它可以让你轻松实现双向绑定与数据的隔离，并且可以很好地与Jquery和平共处。</p>
-<p>avalonJs根据兼容性和平台的不同分为三个版本：<br>    1、兼容IE6到及其他浏览器的avalon.js。<br>    2、只兼容到IE10和其他标准浏览器的avalon.modern.js。<br>    3、适合运行于手机端，只是在avalon.modern.js的基础上加上了触屏事件支持的avalon.mobile.js。</p>
+        <p><img src="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg" alt="avalonJs"></p>
+<p>最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪<br>那么今天洒家就来写一篇记录性的笔记吧！</p>
+<h2 id="一，-首先我们得知道什么叫做跨域"><a href="#一，-首先我们得知道什么叫做跨域" class="headerlink" title="一， 首先我们得知道什么叫做跨域"></a>一， 首先我们得知道什么叫做跨域</h2><p>简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。</p>
+<blockquote>
+<p>Ps 如果你在ajax请求的时候控制台报错，并提示 <em>禁止同源策略…</em> 什么的，那么恭喜你，孩子，你跨域了！😄</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="二，为什么选择AvalonJs"><a href="#二，为什么选择AvalonJs" class="headerlink" title="二，为什么选择AvalonJs"></a>二，为什么选择AvalonJs</h2><h3 id="先来看看AvalonJS的优点"><a href="#先来看看AvalonJS的优点" class="headerlink" title="先来看看AvalonJS的优点"></a>先来看看AvalonJS的优点</h3><p>   1、使用简单，在HTML中添加绑定，在JS中用avalon.define定义ViewModel，再调用avalon.scan方法，它就能动了！<br>   2、兼容到 IE6 (其他MVVM框架，KnockoutJS(IE6), AngularJS(IE9), EmberJS(IE8), WinJS(IE9) )，另有avalon.mobile，它可以更高效地运行于IE10等新版本浏览器中<br>   3、没有任何依赖，不到5000行，压缩后不到50KiB<br>   4、支持管道符风格的过滤函数，方便格式化输出<br>   5、局部刷新的颗粒度已细化到一个文本节点，特性节点<br>   6、要操作的节点，在第一次扫描就与视图刷新函数相绑定，并缓存起来，因此没有选择器出场的余地。<br>   7、让DOM操作的代码近乎绝迹<br>   8、使用类似CSS的重叠覆盖机制，让各个ViewModel分区交替地渲染页面<br>   9、节点移除时，智能卸载对应的视图刷新函数，节约内存<br>   10、操作数据即操作DOM，对ViewModel的操作都会同步到View与Model去<br>   11、自带AMD模块加载器，省得与其他加载器进行整合。</p>
+<h2 id="二，然后我们还得知道什么是CORS"><a href="#二，然后我们还得知道什么是CORS" class="headerlink" title="二，然后我们还得知道什么是CORS"></a>二，然后我们还得知道什么是CORS</h2><p>CORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。</p>
+<h2 id="三，怎么使用CORS实现跨域"><a href="#三，怎么使用CORS实现跨域" class="headerlink" title="三，怎么使用CORS实现跨域"></a>三，怎么使用CORS实现跨域</h2><p>不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。</p>
 <blockquote>
-<p>Ps 此段出自: 知乎 作者：<a href="https://www.zhihu.com/question/27791075/answer/38830138" target="_blank" rel="external">汤威</a></p>
+<p>XMLHttpRequest在标准浏览器下也得到了升级。</p>
 </blockquote>
-<h3 id="再来看看AvalonJs的缺点"><a href="#再来看看AvalonJs的缺点" class="headerlink" title="再来看看AvalonJs的缺点"></a>再来看看AvalonJs的缺点</h3><p>1，对数组的过滤没有angular那么方面，avalon的过滤器只能用于ms-text, ms-html(1.5版本好了很多)<br>2，没有英文文档，宣传受到限制（许多人也误把我在博客园的入门教程当成官网，其实官网是在GITHUB上 <a href="http://avalonjs.github.io/）" target="_blank" rel="external">http://avalonjs.github.io/）</a><br>3，OniUI的皮肤不够好看。（ps:OmiUI暂不支持1.5版本，avalonJs有AvalonUI-Bootstrap项目）</p>
+<p><code></code></p>
+<pre><code>var oBtn = document.getElementById(&apos;btn&apos;); ///前端ajax请求
+
+oBtn.onclick = function() {
+
+    var xhr = new XMLHttpRequest();
+     xhr.onload = function () {
+                if (xhr.status == 200) {
+                    alert(xhr.responseText);
+                }
+            }
+    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
+    xhr.send();
+
+}
+
+&lt;?php     /// 后端设置，这里当然需要后端来写。主要是声明header
+header(&apos;Access-Control-Allow-Origin:http://www.aaa.com&apos;);    //这是允许访问该资源的域，也可设置为 *（所以域名）
+echo &apos;hello&apos;;
+</code></pre><p></p>
 <blockquote>
-<p>Ps 此段出自: 知乎 作者：<a href="https://www.zhihu.com/question/27464076/answer/36981066" target="_blank" rel="external">司徒正美</a></p>
+<p>就这么简单，标准浏览器下跨域就这么简单。</p>
 </blockquote>
-<h2 id="三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。"><a href="#三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。" class="headerlink" title="三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。"></a>三，我们来看看<a href="http://avalonjs.github.io" target="_blank" rel="external">avalon官网</a>上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。</h2><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-
-&lt;head&gt;
-    &lt;title&gt;first&lt;/title&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;script src=&quot;//cdn.bootcss.com/avalon.js/1.5.5/avalon.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-        var vm = avalon.define({
-            $id: &quot;test&quot;,
-            name: &quot;谦和&quot;
-        })
-    &lt;/script&gt;
-&lt;/head&gt;
-
-&lt;body ms-controller=&quot;test&quot;&gt;
-    &lt;input ms-duplex=&quot;name&quot;&gt;
-    &lt;p&gt;Hello,{{name}}!&lt;/p&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
-</code></pre><blockquote>
-<p>Ps 复制到html文件在浏览器查看效果。MVVM就这么简单！</p>
+<h2 id="四，-让我们来看看不标准的IE，怎么解决跨域"><a href="#四，-让我们来看看不标准的IE，怎么解决跨域" class="headerlink" title="四， 让我们来看看不标准的IE，怎么解决跨域"></a>四， 让我们来看看不标准的IE，怎么解决跨域</h2><blockquote>
+<p>这里的不兼容，不是指IE不支持CORS方案，而是指IE下没有根据标准对XMLHttpRequest进行改写升级，不过IE大神自己创造了一个支持IE7以上跨域的方法XDomainRequest()  IE6请自行忽略！</p>
 </blockquote>
-<p>注释：<br>    1、<code>&lt;body ms-controller=&quot;test&quot;&gt;</code>中的 ms-controller ，用来声明avalon的作用域并且需指定控制域名。类似于angularjs中的 ng-controller。<br>在一个HTML文件中我们可以定义多个 ms-controller。Ps： 一个控制域与一个Model相对应，当Model中的数据发生变化，与之对应的控制域的DOM会自动进行变化。<br>    2、avalon.define()在avalon中，我们用 avalon.define({…}) 的形式来定义一个Model实例（其参数可以看做一个avalon数据对象），其中的$id是内置属性，对应所要扫描和监控的控制域名。<br>    3、avalon使用 ms- 开头的属性。所以只要涉及到Avalon动态处理功能的，都要注意定义ms- 开头的属性。<br>    4、ms-duplex=”name” 绑定数据到VM。 Ps：ms-duplex是avalon最重要的功能之一，是唯一一个能让试图同步到VM的指令。这里需要注意的是，它绑定的元素只是表单元素。<br>    5、两个大括号为avalon的插值表达，与AngularJs中的使用方法一样。用于把在VM中的数据插入到HTML里。</p>
-<h2 id="四、avalonJs-详细学习渠道"><a href="#四、avalonJs-详细学习渠道" class="headerlink" title="四、avalonJs 详细学习渠道"></a>四、avalonJs 详细学习渠道</h2><h4 id="AvalonJs-gitHub官网-http-avalonjs-github-io"><a href="#AvalonJs-gitHub官网-http-avalonjs-github-io" class="headerlink" title="AvalonJs gitHub官网 http://avalonjs.github.io"></a>AvalonJs gitHub官网 <a href="http://avalonjs.github.io" target="_blank" rel="external">http://avalonjs.github.io</a></h4><h4 id="AvalonJs-中文论坛-http-www-avalon-org-cn"><a href="#AvalonJs-中文论坛-http-www-avalon-org-cn" class="headerlink" title="AvalonJs 中文论坛 http://www.avalon.org.cn"></a>AvalonJs 中文论坛 <a href="http://www.avalon.org.cn" target="_blank" rel="external">http://www.avalon.org.cn</a></h4><h4 id="AvalonJs-1-5API-http-www-cnblogs-com-rubylouvre-p-4783966-html"><a href="#AvalonJs-1-5API-http-www-cnblogs-com-rubylouvre-p-4783966-html" class="headerlink" title="AvalonJs 1.5API http://www.cnblogs.com/rubylouvre/p/4783966.html"></a>AvalonJs 1.5API <a href="http://www.cnblogs.com/rubylouvre/p/4783966.html" target="_blank" rel="external">http://www.cnblogs.com/rubylouvre/p/4783966.html</a></h4><h4 id="AvalonJs-视频教程-http-edu-51cto-com-course-course-id-2533-page-1-html"><a href="#AvalonJs-视频教程-http-edu-51cto-com-course-course-id-2533-page-1-html" class="headerlink" title="AvalonJs 视频教程 http://edu.51cto.com/course/course_id-2533-page-1.html"></a>AvalonJs 视频教程 <a href="http://edu.51cto.com/course/course_id-2533-page-1.html" target="_blank" rel="external">http://edu.51cto.com/course/course_id-2533-page-1.html</a></h4><blockquote>
-<p>Ps：因为1.5版本改动较大，视频中的一些方法使用时出错，请查看1.5API，获取前往官网查看改动。 </p>
+<p><code></code></p>
+<pre><code>    var oBtn = document.getElementById(&apos;btn&apos;); ///IE下ajax跨域请求
+    oBtn.onclick = function() {
+
+    var xhr = new XDomainRequest();  ///注意这里
+     xhr.onload = function () {
+               alert(xhr.responseText);
+            }
+
+    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
+    xhr.send();
+
+}
+</code></pre><p></p>
+<h2 id="五，-做兼容"><a href="#五，-做兼容" class="headerlink" title="五， 做兼容"></a>五， 做兼容</h2><p><code></code></p>
+<pre><code>var IE678 = navigator.userAgent.indexOf(&quot;MSIE 9.0&quot;)&gt;0||navigator.userAgent.indexOf(&quot;MSIE 7.0&quot;)&gt;0||navigator.appVersion.match(/8./i)==&quot;8.&quot;
+var url = &apos;http://www.bbb.com.xxxx.php&apos;; 
+if(IE678)   /// IE
+{
+var xhr = new XDomainRequest();
+     xhr.onload = function () {
+        alert(xhr.responseText);
+          }
+    xhr.open(&apos;get&apos;, url, true);
+    xhr.send();
+
+}else{  ///标准浏览器
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+           if (xhr.status == 200) {
+             alert(xhr.responseText);
+           }
+      }
+    xhr.open(&apos;get&apos;, url, true);
+    xhr.send();
+}
+</code></pre><p></p>
+<blockquote>
+<p>ps: 小弟还才疏学浅，如果哪位同道中人看到代码中哪有BUG或者优化改进的地方，欢迎加我好友学习交流😁</p>
 </blockquote>
+<p><img src="http://kunn.me/images/weixin.jpg" alt="我的微信" title="欢迎加我微信学习交流"></p>
 
       
     </div>
@@ -368,7 +414,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
       
         <div class="post-tags">
           
-            <a href="/tags/MVVM/" rel="tag">#MVVM</a>
+            <a href="/tags/ajax-CORS/" rel="tag">#ajax-CORS</a>
           
         </div>
       
@@ -377,7 +423,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/16/HTML5-One/" rel="next" title="Html5之语义化标签与Form控件">
+              <a href="/2016/03/15/HTML5-One/" rel="next" title="Html5之语义化标签与Form控件">
                 <i class="fa fa-chevron-left"></i> Html5之语义化标签与Form控件
               </a>
             
@@ -385,8 +431,8 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/26/Js篇之温故/" rel="prev" title="Js篇之温习">
-                Js篇之温习 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/24/avalonJS/" rel="prev" title="AvalonJS">
+                AvalonJS <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -402,10 +448,10 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/20/avalonJS/"
-     data-title="AvalonJS"
+        <div class="ds-share flat" data-thread-key="2016/03/20/ajax-CrossDomain/"
+     data-title="Ajax跨域之CORS"
      data-content=""
-     data-url="http://kunn.me/2016/03/20/avalonJS/">
+     data-url="http://kunn.me/2016/03/20/ajax-CrossDomain/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -432,8 +478,8 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/20/avalonJS/"
-           data-title="AvalonJS" data-url="http://kunn.me/2016/03/20/avalonJS/">
+      <div class="ds-thread" data-thread-key="2016/03/20/ajax-CrossDomain/"
+           data-title="Ajax跨域之CORS" data-url="http://kunn.me/2016/03/20/ajax-CrossDomain/">
       </div>
     
   </div>
@@ -554,7 +600,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，关于AvalonJs"><span class="nav-number">1.</span> <span class="nav-text">一，关于AvalonJs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，为什么选择AvalonJs"><span class="nav-number">2.</span> <span class="nav-text">二，为什么选择AvalonJs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先来看看AvalonJS的优点"><span class="nav-number">2.1.</span> <span class="nav-text">先来看看AvalonJS的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再来看看AvalonJs的缺点"><span class="nav-number">2.2.</span> <span class="nav-text">再来看看AvalonJs的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。"><span class="nav-number">3.</span> <span class="nav-text">三，我们来看看avalon官网上的，十秒钟看懂avalonJs，并讲解一下其中的知识要点。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、avalonJs-详细学习渠道"><span class="nav-number">4.</span> <span class="nav-text">四、avalonJs 详细学习渠道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#AvalonJs-gitHub官网-http-avalonjs-github-io"><span class="nav-number">4.0.1.</span> <span class="nav-text">AvalonJs gitHub官网 http://avalonjs.github.io</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AvalonJs-中文论坛-http-www-avalon-org-cn"><span class="nav-number">4.0.2.</span> <span class="nav-text">AvalonJs 中文论坛 http://www.avalon.org.cn</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AvalonJs-1-5API-http-www-cnblogs-com-rubylouvre-p-4783966-html"><span class="nav-number">4.0.3.</span> <span class="nav-text">AvalonJs 1.5API http://www.cnblogs.com/rubylouvre/p/4783966.html</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AvalonJs-视频教程-http-edu-51cto-com-course-course-id-2533-page-1-html"><span class="nav-number">4.0.4.</span> <span class="nav-text">AvalonJs 视频教程 http://edu.51cto.com/course/course_id-2533-page-1.html</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，-首先我们得知道什么叫做跨域"><span class="nav-number">1.</span> <span class="nav-text">一， 首先我们得知道什么叫做跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，然后我们还得知道什么是CORS"><span class="nav-number">2.</span> <span class="nav-text">二，然后我们还得知道什么是CORS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，怎么使用CORS实现跨域"><span class="nav-number">3.</span> <span class="nav-text">三，怎么使用CORS实现跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，-让我们来看看不标准的IE，怎么解决跨域"><span class="nav-number">4.</span> <span class="nav-text">四， 让我们来看看不标准的IE，怎么解决跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五，-做兼容"><span class="nav-number">5.</span> <span class="nav-text">五， 做兼容</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -585,7 +631,7 @@ avalonJs根据兼容性和平台的不同分为三个版本：    1、兼容IE6�
 </div>
 
 <div class="powered-by">
-宽以待人，严以律己
+枯峎老伯
   
 </div>
 

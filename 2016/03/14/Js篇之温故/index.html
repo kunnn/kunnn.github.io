@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ajax-CORS," />
+  <meta name="keywords" content="温习," />
 
 
 
@@ -57,28 +57,30 @@
 
 
 
-<meta name="description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
-一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+<meta name="description" content="全能人气小王子之Javascript
+从 2013 至 2016 年，JS 已四年蝉联最热门技术。数据来自StackOverflow 2016 年开发者调查，详见JavaScript 是世界上最好的语言？
 
-Ps 如果你在a">
+
+而作为前端没有理由不学好学透Js。虽然干前端有段时间了，但感觉一直没怎么深入，所以就从温习开始吧！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax跨域之CORS">
-<meta property="og:url" content="http://kunn.me/2016/03/14/ajax-CrossDomain/index.html">
+<meta property="og:title" content="Js篇之温习">
+<meta property="og:url" content="http://kunn.me/2016/03/14/Js篇之温故/index.html">
 <meta property="og:site_name" content="谦和">
-<meta property="og:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
-一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+<meta property="og:description" content="全能人气小王子之Javascript
+从 2013 至 2016 年，JS 已四年蝉联最热门技术。数据来自StackOverflow 2016 年开发者调查，详见JavaScript 是世界上最好的语言？
 
-Ps 如果你在a">
-<meta property="og:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
-<meta property="og:image" content="http://kunn.me/images/weixin.jpg">
-<meta property="og:updated_time" content="2016-03-26T07:31:19.000Z">
+
+而作为前端没有理由不学好学透Js。虽然干前端有段时间了，但感觉一直没怎么深入，所以就从温习开始吧！">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/7cc829d3jw1f265zzd0xlj20h50c4gmo.jpg">
+<meta property="og:updated_time" content="2016-03-27T16:24:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax跨域之CORS">
-<meta name="twitter:description" content="最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪那么今天洒家就来写一篇记录性的笔记吧！
-一， 首先我们得知道什么叫做跨域简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。
+<meta name="twitter:title" content="Js篇之温习">
+<meta name="twitter:description" content="全能人气小王子之Javascript
+从 2013 至 2016 年，JS 已四年蝉联最热门技术。数据来自StackOverflow 2016 年开发者调查，详见JavaScript 是世界上最好的语言？
 
-Ps 如果你在a">
-<meta name="twitter:image" content="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg">
+
+而作为前端没有理由不学好学透Js。虽然干前端有段时间了，但感觉一直没怎么深入，所以就从温习开始吧！">
+<meta name="twitter:image" content="http://ww4.sinaimg.cn/large/7cc829d3jw1f265zzd0xlj20h50c4gmo.jpg">
 
 
 
@@ -96,7 +98,7 @@ Ps 如果你在a">
   };
 </script>
 
-  <title> Ajax跨域之CORS | 谦和 </title>
+  <title> Js篇之温习 | 谦和 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -256,7 +258,7 @@ Ps 如果你在a">
             
             
               
-                Ajax跨域之CORS
+                Js篇之温习
               
             
           </h1>
@@ -268,7 +270,7 @@ Ps 如果你在a">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-14T22:25:23+08:00" content="2016-03-14">
+            <time itemprop="dateCreated" datetime="2016-03-14T12:14:40+08:00" content="2016-03-14">
               2016-03-14
             </time>
           </span>
@@ -282,8 +284,8 @@ Ps 如果你在a">
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Notes/" itemprop="url" rel="index">
-                    <span itemprop="name">Notes</span>
+                  <a href="/categories/Javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">Javascript</span>
                   </a>
                 </span>
 
@@ -298,8 +300,8 @@ Ps 如果你在a">
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/14/ajax-CrossDomain/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/ajax-CrossDomain/" itemprop="commentsCount"></span>
+                <a href="/2016/03/14/Js篇之温故/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/14/Js篇之温故/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -321,85 +323,72 @@ Ps 如果你在a">
       
 
       
-        <p><img src="http://tupian.enterdesk.com/2014/xll/03/03/1/qinshimingyue5.jpg" alt="avalonJs"></p>
-<p>最近在工作中常常需要用ajax请求在线服务器JSON数据，大多需要要Post，所以又不能用JSONP。所以就研究了下CORS跨域。话说这是2014年出的技术😳，我现在才研究。洒家真是汗颜。😪<br>那么今天洒家就来写一篇记录性的笔记吧！</p>
-<h2 id="一，-首先我们得知道什么叫做跨域"><a href="#一，-首先我们得知道什么叫做跨域" class="headerlink" title="一， 首先我们得知道什么叫做跨域"></a>一， 首先我们得知道什么叫做跨域</h2><p>简单的说就是：不管你post还是get所请求的url与你网站的协议、域名、端口其中只要有任何一个不同，即为跨域。</p>
-<blockquote>
-<p>Ps 如果你在ajax请求的时候控制台报错，并提示 <em>禁止同源策略…</em> 什么的，那么恭喜你，孩子，你跨域了！😄</p>
+        <h2 id="全能人气小王子之Javascript"><a href="#全能人气小王子之Javascript" class="headerlink" title="全能人气小王子之Javascript"></a>全能人气小王子之Javascript</h2><blockquote>
+<p>从 2013 至 2016 年，JS 已四年蝉联最热门技术。数据来自StackOverflow 2016 年开发者调查，详见<a href="http://web.jobbole.com/84693/" target="_blank" rel="external">JavaScript 是世界上最好的语言？</a></p>
 </blockquote>
-<a id="more"></a>
-<h2 id="二，然后我们还得知道什么是CORS"><a href="#二，然后我们还得知道什么是CORS" class="headerlink" title="二，然后我们还得知道什么是CORS"></a>二，然后我们还得知道什么是CORS</h2><p>CORS (Cross-Origin Resource Sharing)是我们伟大的W3C在2014年正式推出的跨域访问方案。实现起来非常简单。</p>
-<h2 id="三，怎么使用CORS实现跨域"><a href="#三，怎么使用CORS实现跨域" class="headerlink" title="三，怎么使用CORS实现跨域"></a>三，怎么使用CORS实现跨域</h2><p>不管你是get还是post只需要在服务端返回的头部信息中注明是否允许跨域访问，以及允许哪些域访问或者运行所以域名访问就行。</p>
-<blockquote>
-<p>XMLHttpRequest在标准浏览器下也得到了升级。</p>
-</blockquote>
-<p><code></code></p>
-<pre><code>var oBtn = document.getElementById(&apos;btn&apos;); ///前端ajax请求
-
-oBtn.onclick = function() {
-
-    var xhr = new XMLHttpRequest();
-     xhr.onload = function () {
-                if (xhr.status == 200) {
-                    alert(xhr.responseText);
-                }
-            }
-    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
-    xhr.send();
-
+<p><img src="http://ww4.sinaimg.cn/large/7cc829d3jw1f265zzd0xlj20h50c4gmo.jpg" alt="StackOverflow 2016 年开发者调查"></p>
+<pre><code>而作为前端没有理由不学好学透Js。虽然干前端有段时间了，但感觉一直没怎么深入，所以就从温习开始吧！
+</code></pre><a id="more"></a>    
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="650" height="86" src="http://music.163.com/outchain/player?type=2&id=26324179&auto=1&height=66"></iframe>            </p>
+<h2 id="一-Js-基础"><a href="#一-Js-基础" class="headerlink" title="一. Js 基础"></a>一. Js 基础</h2><h3 id="1-语言特点"><a href="#1-语言特点" class="headerlink" title="1. 语言特点"></a>1. 语言特点</h3><ul>
+<li>解释型语言</li>
+<li>类似于C和Java的语法结构</li>
+<li>动态语言</li>
+<li>基于原型的面向对象</li>
+<li>字面量的表现能力</li>
+<li>函数式编程</li>
+</ul>
+<h3 id="2-变量"><a href="#2-变量" class="headerlink" title="2. 变量"></a>2. 变量</h3><ul>
+<li><p>使用关键字 var 声明变量</p>
+<p><code>var abc;      // 1.只声明但未赋值的变量，值为undefined     2.使用var 声明的变量为显示声明，如在函数内部声明则为局部变量，在外部声明即为全局变量</code></p>
+</li>
+<li><p>通过赋值运算符 = 为其赋值</p>
+<p><code>abc = &#39;abc111&#39;   // 1.把字符串abc111赋值给变量abc  2.变量可为数字，字符串，布尔值, 数组, 对象, null, undefind</code></p>
+</li>
+<li><p>也可以在声明变量的同时为其赋值</p>
+<p><code>var abc = &#39;abc&#39;</code></p>
+</li>
+<li><p>省略var声明变量</p>
+<p>` abb = 25;       // 隐式生命变量，这样声明的变量为全局变量，即使写在函数内部也为全局变量。即没通过var声明的变量都为隐式全局变量。我们应该尽可能的避免使用全局变量，杜绝使用省略var的声明方式，不管是局部还是全局都用显示声明。</p>
+</li>
+</ul>
+<h3 id="3-常量"><a href="#3-常量" class="headerlink" title="3. 常量"></a>3. 常量</h3><ul>
+<li><p>使用关键字 const 声明常量</p>
+<p><code>const abc = 7;  // 1.如果我们只声明为赋值的话同变量一样为undefind，2.如果给一个常量再次赋值，这个常量值不会发生改变，</code></p>
+</li>
+</ul>
+<h3 id="4-函数"><a href="#4-函数" class="headerlink" title="4. 函数"></a>4. 函数</h3><ul>
+<li><p>函数声明与调用</p>
+<pre><code>function sun(a,b){   //声明，sun为函数名，a,b为参数，参数可为N多个
+   return Number(a)+Number(b)     //函数体  ruturn出a,b相加的结果，Number()把a的值转换为数字
 }
+sun(1,2)    //调用
+</code></pre></li>
+</ul>
+<ul>
+<li><p>自执行匿名函数写法</p>
+<pre><code> （function(){
+    alert(&apos;asd&apos;)
+ }())    //jslint推荐写法，方便阅读
 
-&lt;?php     /// 后端设置，这里当然需要后端来写。主要是声明header
-header(&apos;Access-Control-Allow-Origin:http://www.aaa.com&apos;);    //这是允许访问该资源的域，也可设置为 *（所以域名）
-echo &apos;hello&apos;;
-</code></pre><p></p>
+（function(){
+    alert(&apos;sad&apos;)
+ })()
+</code></pre></li>
+</ul>
+<h3 id="5-对象"><a href="#5-对象" class="headerlink" title="5. 对象"></a>5. 对象</h3><ul>
+<li><p>可以通过对象字面量来生成一个对象，对象字面量表达式由大括号{}括起，内部有属性名和属性值</p>
+<pre><code>var obj = {属性名：属性值，属性名：属性值，。。。}     // 1.属性值可为任意类型。2.可以通过obj.属性名 来访问对应属性值也可通过obj[&apos;属性名&apos;]的方式来访问对应属性值
+</code></pre></li>
+</ul>
+<h3 id="6-new-表达式"><a href="#6-new-表达式" class="headerlink" title="6. new 表达式"></a>6. new 表达式</h3><ul>
+<li><p>js中new表达式的作用是生成一个对象</p>
+<pre><code>var obj = new object();  等同于  var obj = {};
+</code></pre></li>
+</ul>
 <blockquote>
-<p>就这么简单，标准浏览器下跨域就这么简单。</p>
+<p>更新ING</p>
 </blockquote>
-<h2 id="四，-让我们来看看不标准的IE，怎么解决跨域"><a href="#四，-让我们来看看不标准的IE，怎么解决跨域" class="headerlink" title="四， 让我们来看看不标准的IE，怎么解决跨域"></a>四， 让我们来看看不标准的IE，怎么解决跨域</h2><blockquote>
-<p>这里的不兼容，不是指IE不支持CORS方案，而是指IE下没有根据标准对XMLHttpRequest进行改写升级，不过IE大神自己创造了一个支持IE7以上跨域的方法XDomainRequest()  IE6请自行忽略！</p>
-</blockquote>
-<p><code></code></p>
-<pre><code>    var oBtn = document.getElementById(&apos;btn&apos;); ///IE下ajax跨域请求
-    oBtn.onclick = function() {
-
-    var xhr = new XDomainRequest();  ///注意这里
-     xhr.onload = function () {
-               alert(xhr.responseText);
-            }
-
-    xhr.open(&apos;get&apos;, &apos;http://www.bbb.com/ajax.php&apos;, true);
-    xhr.send();
-
-}
-</code></pre><p></p>
-<h2 id="五，-做兼容"><a href="#五，-做兼容" class="headerlink" title="五， 做兼容"></a>五， 做兼容</h2><p><code></code></p>
-<pre><code>var IE678 = navigator.userAgent.indexOf(&quot;MSIE 9.0&quot;)&gt;0||navigator.userAgent.indexOf(&quot;MSIE 7.0&quot;)&gt;0||navigator.appVersion.match(/8./i)==&quot;8.&quot;
-var url = &apos;http://www.bbb.com.xxxx.php&apos;; 
-if(IE678)   /// IE
-{
-var xhr = new XDomainRequest();
-     xhr.onload = function () {
-        alert(xhr.responseText);
-          }
-    xhr.open(&apos;get&apos;, url, true);
-    xhr.send();
-
-}else{  ///标准浏览器
-    var xhr = new XMLHttpRequest();
-    xhr.onload = function () {
-           if (xhr.status == 200) {
-             alert(xhr.responseText);
-           }
-      }
-    xhr.open(&apos;get&apos;, url, true);
-    xhr.send();
-}
-</code></pre><p></p>
-<blockquote>
-<p>ps: 小弟还才疏学浅，如果哪位同道中人看到代码中哪有BUG或者优化改进的地方，欢迎加我好友学习交流😁</p>
-</blockquote>
-<p><img src="http://kunn.me/images/weixin.jpg" alt="我的微信" title="欢迎加我微信学习交流"></p>
 
       
     </div>
@@ -414,7 +403,7 @@ var xhr = new XDomainRequest();
       
         <div class="post-tags">
           
-            <a href="/tags/ajax-CORS/" rel="tag">#ajax-CORS</a>
+            <a href="/tags/温习/" rel="tag">#温习</a>
           
         </div>
       
@@ -448,10 +437,10 @@ var xhr = new XDomainRequest();
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/03/14/ajax-CrossDomain/"
-     data-title="Ajax跨域之CORS"
+        <div class="ds-share flat" data-thread-key="2016/03/14/Js篇之温故/"
+     data-title="Js篇之温习"
      data-content=""
-     data-url="http://kunn.me/2016/03/14/ajax-CrossDomain/">
+     data-url="http://kunn.me/2016/03/14/Js篇之温故/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -478,8 +467,8 @@ var xhr = new XDomainRequest();
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/03/14/ajax-CrossDomain/"
-           data-title="Ajax跨域之CORS" data-url="http://kunn.me/2016/03/14/ajax-CrossDomain/">
+      <div class="ds-thread" data-thread-key="2016/03/14/Js篇之温故/"
+           data-title="Js篇之温习" data-url="http://kunn.me/2016/03/14/Js篇之温故/">
       </div>
     
   </div>
@@ -600,7 +589,7 @@ var xhr = new XDomainRequest();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一，-首先我们得知道什么叫做跨域"><span class="nav-number">1.</span> <span class="nav-text">一， 首先我们得知道什么叫做跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二，然后我们还得知道什么是CORS"><span class="nav-number">2.</span> <span class="nav-text">二，然后我们还得知道什么是CORS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三，怎么使用CORS实现跨域"><span class="nav-number">3.</span> <span class="nav-text">三，怎么使用CORS实现跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四，-让我们来看看不标准的IE，怎么解决跨域"><span class="nav-number">4.</span> <span class="nav-text">四， 让我们来看看不标准的IE，怎么解决跨域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五，-做兼容"><span class="nav-number">5.</span> <span class="nav-text">五， 做兼容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全能人气小王子之Javascript"><span class="nav-number">1.</span> <span class="nav-text">全能人气小王子之Javascript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-Js-基础"><span class="nav-number">2.</span> <span class="nav-text">一. Js 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-语言特点"><span class="nav-number">2.1.</span> <span class="nav-text">1. 语言特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-变量"><span class="nav-number">2.2.</span> <span class="nav-text">2. 变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-常量"><span class="nav-number">2.3.</span> <span class="nav-text">3. 常量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-函数"><span class="nav-number">2.4.</span> <span class="nav-text">4. 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-对象"><span class="nav-number">2.5.</span> <span class="nav-text">5. 对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-new-表达式"><span class="nav-number">2.6.</span> <span class="nav-text">6. new 表达式</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -631,7 +620,7 @@ var xhr = new XDomainRequest();
 </div>
 
 <div class="powered-by">
-宽以待人，严以律己
+枯峎老伯
   
 </div>
 
