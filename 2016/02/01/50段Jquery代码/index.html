@@ -1,0 +1,1138 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="代码片段," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="英文原文:  50 jQuery Snippets That Will Help You Become A Better JavaScript Developer
+翻译：woiweb
+
+PS：原文作者 Addy Osmani 是Google Chrome 团队成员。
+
+本文展示了50个jquery代码片段，这些代码能够给你的javascript项目提供帮助。其中的一些代码段是从jQuery1.4">
+<meta property="og:type" content="article">
+<meta property="og:title" content="50个jQuery代码段帮你成为更出色的JS开发者">
+<meta property="og:url" content="http://kunn.me/2016/02/01/50段Jquery代码/index.html">
+<meta property="og:site_name" content="谦和">
+<meta property="og:description" content="英文原文:  50 jQuery Snippets That Will Help You Become A Better JavaScript Developer
+翻译：woiweb
+
+PS：原文作者 Addy Osmani 是Google Chrome 团队成员。
+
+本文展示了50个jquery代码片段，这些代码能够给你的javascript项目提供帮助。其中的一些代码段是从jQuery1.4">
+<meta property="og:image" content="http://jbcdn2.b0.upaiyun.com/2012/04/snippets.jpg">
+<meta property="og:updated_time" content="2016-04-17T10:37:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="50个jQuery代码段帮你成为更出色的JS开发者">
+<meta name="twitter:description" content="英文原文:  50 jQuery Snippets That Will Help You Become A Better JavaScript Developer
+翻译：woiweb
+
+PS：原文作者 Addy Osmani 是Google Chrome 团队成员。
+
+本文展示了50个jquery代码片段，这些代码能够给你的javascript项目提供帮助。其中的一些代码段是从jQuery1.4">
+<meta name="twitter:image" content="http://jbcdn2.b0.upaiyun.com/2012/04/snippets.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 50个jQuery代码段帮你成为更出色的JS开发者 | 谦和 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2816c6b8936d6e22bad0d061089d2924";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">谦和</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">努力，只为早一天独当一面。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                50个jQuery代码段帮你成为更出色的JS开发者
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-01T16:44:20+08:00" content="2016-02-01">
+              2016-02-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">Jquery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/01/50段Jquery代码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/01/50段Jquery代码/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://jbcdn2.b0.upaiyun.com/2012/04/snippets.jpg" alt=""></p>
+<p>英文原文: <a href="https://addyosmani.com/blog/50-jquery-snippets-for-developers/" target="_blank" rel="external"> 50 jQuery Snippets That Will Help You Become A Better JavaScript Developer</a></p>
+<p>翻译：<a href="http://woiweb.net/50-jquery-snippets-for-developers.html" target="_blank" rel="external">woiweb</a></p>
+<blockquote>
+<p>PS：原文作者 Addy Osmani 是Google Chrome 团队成员。</p>
+</blockquote>
+<p>本文展示了50个jquery代码片段，这些代码能够给你的javascript项目提供帮助。其中的一些代码段是从jQuery1.4.2才开始支持的做法，另一些则是真正有用的函数或方法，它们能够帮助你又快又好地把事情完成。这些都是我尽量记住的有着最佳性能的代码段，因此如果你发现你任何可以做得更好的地方的话，欢迎把你的版本粘贴在评论中！我希望你在这一文章中能找到有帮助的东西。</p>
+<a id="more"></a>
+<h6 id="如何创建嵌套的过滤器"><a href="#如何创建嵌套的过滤器" class="headerlink" title="如何创建嵌套的过滤器"></a>如何创建嵌套的过滤器</h6><pre><code>//允许你减少集合中的匹配元素的过滤器，
+//只剩下那些与给定的选择器匹配的部分。在这种情况下，
+//查询删除了任何没（:not）有（:has）
+//包含class为“selected”（.selected）的子节点。
+.filter(&quot;:not(:has(.selected))&quot;)
+</code></pre><h6 id="如何重用元素搜索"><a href="#如何重用元素搜索" class="headerlink" title="如何重用元素搜索"></a>如何重用元素搜索</h6><pre><code>var allItems = $(&quot;div.item&quot;);
+var keepList = $(&quot;div#container1 div.item&quot;);
+//现在你可以继续使用这些jQuery对象来工作了。例如，
+
+//基于复选框裁剪“keep list”，复选框的名称
+//符合
+&lt; DIV &gt;class names:
+$(formToLookAt + &quot; input:checked&quot;).each(function() {
+    keepList = keepList.filter(&quot;.&quot; + $(this).attr(&quot;name&quot;));
+});
+&lt; /DIV&gt;
+</code></pre><h6 id="如何使用jQuery来切换样式表"><a href="#如何使用jQuery来切换样式表" class="headerlink" title="如何使用jQuery来切换样式表"></a>如何使用jQuery来切换样式表</h6><pre><code>//找出你希望切换的媒体类型（media-type），然后把href设置成新的样式表。
+$(&apos;link[media=&apos;screen&apos;]&apos;).attr(&apos;href&apos;, &apos;Alternative.css&apos;);
+</code></pre><h6 id="如何限制选择范围（基于优化目的）"><a href="#如何限制选择范围（基于优化目的）" class="headerlink" title="如何限制选择范围（基于优化目的）"></a>如何限制选择范围（基于优化目的）</h6><pre><code>//尽可能使用标签名来作为类名的前缀，
+//这样jQuery就不需要花费更多的时间来搜索
+//你想要的元素。还要记住的一点是，
+//针对于你的页面上的元素的操作越具体化，
+//就越能降低执行和搜索的时间。
+var in_stock = $(&apos;#shopping_cart_items input.is_in_stock&apos;);
+
+&lt;ul id=&quot;shopping_cart_items&quot;&gt;
+&lt;li&gt;&lt;input type=&quot;radio&quot; value=&quot;Item-X&quot; name=&quot;item&quot; class=&quot;is_in_stock&quot; /&gt; Item X&lt;/li&gt;
+&lt;li&gt;&lt;input type=&quot;radio&quot; value=&quot;Item-Y&quot; name=&quot;item&quot; class=&quot;3-5_days&quot; /&gt; Item Y&lt;/li&gt;
+&lt;li&gt;&lt;input type=&quot;radio&quot; value=&quot;Item-Z&quot; name=&quot;item&quot; class=&quot;unknown&quot; /&gt; Item Z&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h6 id="如何正确地使用ToggleClass"><a href="#如何正确地使用ToggleClass" class="headerlink" title="如何正确地使用ToggleClass"></a>如何正确地使用ToggleClass</h6><pre><code>//切换（toggle）类允许你根据某个类的
+//是否存在来添加或是删除该类。
+//这种情况下有些开发者使用：
+a.hasClass(&apos;blueButton&apos;) ? a.removeClass(&apos;blueButton&apos;) : a.addClass(&apos;blueButton&apos;);
+//toggleClass允许你使用下面的语句来很容易地做到这一点
+
+a.toggleClass(&apos;blueButton&apos;);
+</code></pre><h6 id="如何设置IE特有的功能"><a href="#如何设置IE特有的功能" class="headerlink" title="如何设置IE特有的功能"></a>如何设置IE特有的功能</h6><pre><code>if ($.browser.msie) {
+// Internet Explorer就是个虐待狂
+}
+</code></pre><h6 id="如何使用jQuery来代替一个元素"><a href="#如何使用jQuery来代替一个元素" class="headerlink" title="如何使用jQuery来代替一个元素"></a>如何使用jQuery来代替一个元素</h6><pre><code>$(&apos;#thatdiv&apos;).replaceWith(&apos;fnuh&apos;);
+</code></pre><h6 id="如何验证某个元素是否为空"><a href="#如何验证某个元素是否为空" class="headerlink" title="如何验证某个元素是否为空"></a>如何验证某个元素是否为空</h6><pre><code>if ($(&apos;#keks&apos;).html() == null) {
+//什么都没有找到;
+}
+</code></pre><h6 id="如何从一个未排序的集合中找出某个元素的索引号"><a href="#如何从一个未排序的集合中找出某个元素的索引号" class="headerlink" title="如何从一个未排序的集合中找出某个元素的索引号"></a>如何从一个未排序的集合中找出某个元素的索引号</h6><pre><code>$(&quot;ul &gt; li&quot;).click(function () {
+    var index = $(this).prevAll().length;
+});
+</code></pre><h6 id="如何把函数绑定到事件上"><a href="#如何把函数绑定到事件上" class="headerlink" title="如何把函数绑定到事件上"></a>如何把函数绑定到事件上</h6><pre><code>$(&apos;#foo&apos;).on(&apos;click&apos;, function() {
+    alert(&apos;User clicked on &quot;foo.&quot;&apos;);
+});
+</code></pre><h6 id="如何追加或是添加html到元素中"><a href="#如何追加或是添加html到元素中" class="headerlink" title="如何追加或是添加html到元素中"></a>如何追加或是添加html到元素中</h6><pre><code>$(&apos;#lal&apos;).append(&apos;sometext&apos;);
+</code></pre><h6 id="在创建元素时，如何使用对象字面量（literal）来定义属性"><a href="#在创建元素时，如何使用对象字面量（literal）来定义属性" class="headerlink" title="在创建元素时，如何使用对象字面量（literal）来定义属性"></a>在创建元素时，如何使用对象字面量（literal）来定义属性</h6><pre><code>var e = $(&quot;&quot;, { href: &quot;#&quot;, class: &quot;a-class another-class&quot;, title: &quot;...&quot; });
+</code></pre><h6 id="如何使用多个属性来进行过滤"><a href="#如何使用多个属性来进行过滤" class="headerlink" title="如何使用多个属性来进行过滤"></a>如何使用多个属性来进行过滤</h6><pre><code>//在使用许多相类似的有着不同类型的input元素时，
+//这种基于精确度的方法很有用
+var elements = $(&apos;#someid input[type=sometype][value=somevalue]&apos;).get();
+</code></pre><h6 id="如何使用jQuery来预加载图像"><a href="#如何使用jQuery来预加载图像" class="headerlink" title="如何使用jQuery来预加载图像"></a>如何使用jQuery来预加载图像</h6><pre><code>jQuery.preloadImages = function() {
+    for(var i = 0; i &lt; arguments.length; i++) {
+        $(&quot;&lt;img /&gt;&quot;).attr(&apos;src&apos;, arguments[i]);
+    }
+};
+//用法
+
+$.preloadImages(&apos;image1.gif&apos;, &apos;/path/to/image2.png&apos;, &apos;some/image3.jpg&apos;);
+</code></pre><h6 id="如何为任何与选择器相匹配的元素设置事件处理程序"><a href="#如何为任何与选择器相匹配的元素设置事件处理程序" class="headerlink" title="如何为任何与选择器相匹配的元素设置事件处理程序"></a>如何为任何与选择器相匹配的元素设置事件处理程序</h6><pre><code>$(&apos;button.someClass&apos;).live(&apos;click&apos;, someFunction);
+//注意，在jQuery 1.4.2中，delegate和undelegate选项
+//被引入代替live，因为它们提供了更好的上下文支持
+//例如，就table来说，以前你会用
+//.live()
+$(&quot;table&quot;).each(function(){
+    $(&quot;td&quot;, this).live(&quot;hover&quot;, function(){
+        $(this).toggleClass(&quot;hover&quot;);
+    });
+});
+//现在用
+$(&quot;table&quot;).delegate(&quot;td&quot;, &quot;hover&quot;, function(){
+    $(this).toggleClass(&quot;hover&quot;);
+});
+</code></pre><h6 id="如何找到一个已经被选中的option元素"><a href="#如何找到一个已经被选中的option元素" class="headerlink" title="如何找到一个已经被选中的option元素"></a>如何找到一个已经被选中的option元素</h6><pre><code>$(&apos;#someElement&apos;).find(&apos;option:selected&apos;);
+</code></pre><h6 id="如何隐藏一个包含了某个值文本的元素"><a href="#如何隐藏一个包含了某个值文本的元素" class="headerlink" title="如何隐藏一个包含了某个值文本的元素"></a>如何隐藏一个包含了某个值文本的元素</h6><pre><code>$(&quot;p.value:contains(&apos;thetextvalue&apos;)&quot;).hide();
+</code></pre><h6 id="如何自动滚动到页面中的某区域"><a href="#如何自动滚动到页面中的某区域" class="headerlink" title="如何自动滚动到页面中的某区域"></a>如何自动滚动到页面中的某区域</h6><pre><code>jQuery.fn.autoscroll = function(selector) {
+    $(&apos;html,body&apos;).animate(
+        {scrollTop: $(selector).offset().top},
+        500
+    };
+}
+//然后像这样来滚动到你希望去到的class/area上。
+
+$(&apos;.area_name&apos;).autoscroll();
+</code></pre><h6 id="如何检测各种浏览器"><a href="#如何检测各种浏览器" class="headerlink" title="如何检测各种浏览器"></a>如何检测各种浏览器</h6><pre><code>检测Safari (if( $.browser.safari)),
+检测IE6及之后版本 (if ($.browser.msie &amp;&amp; $.browser.version &gt; 6 )),
+检测IE6及之前版本 (if ($.browser.msie &amp;&amp; $.browser.version &lt;= 6 )),
+检测FireFox 2及之后版本 (if ($.browser.mozilla &amp;&amp; $.browser.version &gt;= &apos;1.8&apos; ))
+</code></pre><h6 id="如何替换串中的词"><a href="#如何替换串中的词" class="headerlink" title="如何替换串中的词"></a>如何替换串中的词</h6><pre><code>var el = $(&apos;#id&apos;);
+    el.html(el.html().replace(/word/ig, &apos;&apos;));
+</code></pre><h6 id="如何禁用右键单击上下文菜单"><a href="#如何禁用右键单击上下文菜单" class="headerlink" title="如何禁用右键单击上下文菜单"></a>如何禁用右键单击上下文菜单</h6><pre><code>$(document).bind(&apos;contextmenu&apos;,function(e){
+    return false;
+});
+</code></pre><h6 id="如何定义一个定制的选择器"><a href="#如何定义一个定制的选择器" class="headerlink" title="如何定义一个定制的选择器"></a>如何定义一个定制的选择器</h6><pre><code>$.expr[&apos;:&apos;].mycustomselector = function(element, index, meta, stack){
+// element- 一个DOM元素
+// index – 栈中的当前循环索引
+// meta – 有关选择器的元数据
+// stack – 要循环的所有元素的栈
+// 如果包含了当前元素就返回true
+// 如果不包含当前元素就返回false };
+// 定制选择器的用法：
+$(&apos;.someClasses:test&apos;).doSomething();
+</code></pre><h6 id="如何检查某个元素是否存在"><a href="#如何检查某个元素是否存在" class="headerlink" title="如何检查某个元素是否存在"></a>如何检查某个元素是否存在</h6><pre><code>if ($(&apos;#someDiv&apos;).length) {
+//万岁！！！它存在……
+}
+</code></pre><h6 id="如何使用jQuery来检测右键和左键的鼠标单击两种情况"><a href="#如何使用jQuery来检测右键和左键的鼠标单击两种情况" class="headerlink" title="如何使用jQuery来检测右键和左键的鼠标单击两种情况"></a>如何使用jQuery来检测右键和左键的鼠标单击两种情况</h6><pre><code>$(&quot;#someelement&quot;).live(&apos;click&apos;, function(e) {
+    if( (!$.browser.msie &amp;&amp; e.button == 0) || ($.browser.msie &amp;&amp; e.button == 1) ) {
+        alert(&quot;Left Mouse Button Clicked&quot;);
+    } else if(e.button == 2) {
+        alert(&quot;Right Mouse Button Clicked&quot;);
+    }
+});
+</code></pre><h6 id="如何显示或是删除input域中的默认值"><a href="#如何显示或是删除input域中的默认值" class="headerlink" title="如何显示或是删除input域中的默认值"></a>如何显示或是删除input域中的默认值</h6><pre><code>//这段代码展示了在用户未输入值时，
+
+//如何在文本类型的input域中保留
+
+//一个默认值
+
+wap_val = [];
+$(&quot;.swap&quot;).each(function(i){
+    wap_val[i] = $(this).val();
+    $(this).focusin(function(){
+        if ($(this).val() == wap_val[i]) {
+            $(this).val(&quot;&quot;);
+        }
+    }).focusout(function(){
+        if ($.trim($(this).val()) == &quot;&quot;) {
+            $(this).val(wap_val[i]);
+        }
+    });
+});
+
+&lt;input type=&quot;text&quot; value=&quot;Enter Username here..&quot; class=&quot;swap&quot; /&gt;
+</code></pre><h6 id="如何在一段时间之后自动隐藏或关闭元素（支持1-4版本）"><a href="#如何在一段时间之后自动隐藏或关闭元素（支持1-4版本）" class="headerlink" title="如何在一段时间之后自动隐藏或关闭元素（支持1.4版本）"></a>如何在一段时间之后自动隐藏或关闭元素（支持1.4版本）</h6><pre><code>//这是1.3.2中我们使用setTimeout来实现的方式
+
+setTimeout(function() {
+  $(&apos;.mydiv&apos;).hide(&apos;blind&apos;, {}, 500)
+}, 5000);
+//而这是在1.4中可以使用delay()这一功能来实现的方式（这很像是休眠）
+
+$(&quot;.mydiv&quot;).delay(5000).hide(&apos;blind&apos;, {}, 500);
+</code></pre><h6 id="如何把已创建的元素动态地添加到DOM中"><a href="#如何把已创建的元素动态地添加到DOM中" class="headerlink" title="如何把已创建的元素动态地添加到DOM中"></a>如何把已创建的元素动态地添加到DOM中</h6><pre><code>var newDiv = $(&apos;&apos;);
+    newDiv.attr(&apos;id&apos;,&apos;myNewDiv&apos;).appendTo(&apos;body&apos;);
+</code></pre><h6 id="如何限制“Text-Area”域中的字符的个数"><a href="#如何限制“Text-Area”域中的字符的个数" class="headerlink" title="如何限制“Text-Area”域中的字符的个数"></a>如何限制“Text-Area”域中的字符的个数</h6><pre><code>jQuery.fn.maxLength = function(max){
+    this.each(function(){
+        var type = this.tagName.toLowerCase();
+        var inputType = this.type? this.type.toLowerCase() : null;
+        if(type == &quot;input&quot; &amp;&amp; inputType == &quot;text&quot; || inputType == &quot;password&quot;){
+
+//Apply the standard maxLength
+
+            this.maxLength = max;
+        }
+        else if(type == &quot;textarea&quot;){
+            this.onkeypress = function(e){
+                var ob = e || event;
+                var keyCode = ob.keyCode;
+                var hasSelection = document.selection? document.selection.createRange().text.length &gt; 0 : this.selectionStart != this.selectionEnd;
+                return !(this.value.length &gt;= max &amp;&amp; (keyCode &gt; 50 || keyCode == 32 || keyCode == 0 || keyCode == 13) &amp;&amp; !ob.ctrlKey &amp;&amp; !ob.altKey &amp;&amp; !hasSelection);
+            };
+            this.onkeyup = function(){
+                if(this.value.length &gt; max){
+                    this.value = this.value.substring(0,max);
+                }
+            };
+        }
+    });
+};
+
+//用法
+$(&apos;#mytextarea&apos;).maxLength(500);
+</code></pre><h6 id="如何在jQuery中克隆一个元素"><a href="#如何在jQuery中克隆一个元素" class="headerlink" title="如何在jQuery中克隆一个元素"></a>如何在jQuery中克隆一个元素</h6><pre><code>var cloned = $(&apos;#somediv&apos;).clone();
+</code></pre><h6 id="在jQuery中如何测试某个元素是否可见"><a href="#在jQuery中如何测试某个元素是否可见" class="headerlink" title="在jQuery中如何测试某个元素是否可见"></a>在jQuery中如何测试某个元素是否可见</h6><pre><code>if($(element).is(&apos;:visible&apos;) == &apos;true&apos;) {
+
+//该元素是可见的
+
+}
+</code></pre><h6 id="如何把一个元素放在屏幕的中心位置"><a href="#如何把一个元素放在屏幕的中心位置" class="headerlink" title="如何把一个元素放在屏幕的中心位置"></a>如何把一个元素放在屏幕的中心位置</h6><pre><code>jQuery.fn.center = function () {
+    this.css(&apos;position&apos;,&apos;absolute&apos;);
+    this.css(&apos;top&apos;, ( $(window).height() - this.height() ) / 2 +$(window).scrollTop() + &apos;px&apos;);
+    this.css(&apos;left&apos;, ( $(window).width() - this.width() ) / 2 +$(window).scrollLeft() + &apos;px&apos;);
+    return this;
+}
+
+//这样来使用上面的函数：
+$(element).center();
+</code></pre><h6 id="如何把有着某个特定名称的所有元素的值都放到一个数组中"><a href="#如何把有着某个特定名称的所有元素的值都放到一个数组中" class="headerlink" title="如何把有着某个特定名称的所有元素的值都放到一个数组中"></a>如何把有着某个特定名称的所有元素的值都放到一个数组中</h6><pre><code>var arrInputValues = new Array();
+$(&quot;input[name=&apos;table[]&apos;]&quot;).each(function(){
+    arrInputValues.push($(this).val());
+});
+</code></pre><h6 id="如何从元素中除去html"><a href="#如何从元素中除去html" class="headerlink" title="如何从元素中除去html"></a>如何从元素中除去html</h6><pre><code>(function($) {
+    $.fn.stripHtml = function() {
+        var regexp = /&lt;(&quot;[^&quot;]*&quot;|&apos;[^&apos;]*&apos;|[^&apos;&quot;&gt;])*&gt;/gi;
+        this.each(function() {
+            $(this).html( $(this).html().replace(regexp,”&quot;) );
+        });
+        return $(this);
+    }
+})(jQuery);
+
+//用法：
+$(&apos;p&apos;).stripHtml();
+</code></pre><h6 id="如何使用closest来取得父元素"><a href="#如何使用closest来取得父元素" class="headerlink" title="如何使用closest来取得父元素"></a>如何使用closest来取得父元素</h6><pre><code>$(&apos;#searchBox&apos;).closest(&apos;div&apos;);
+</code></pre><h6 id="如何使用Firebug和Firefox来记录jQuery事件日志"><a href="#如何使用Firebug和Firefox来记录jQuery事件日志" class="headerlink" title="如何使用Firebug和Firefox来记录jQuery事件日志"></a>如何使用Firebug和Firefox来记录jQuery事件日志</h6><pre><code>// 允许链式日志记录
+
+// 用法：
+
+$(&apos;#someDiv&apos;).hide().log(&apos;div hidden&apos;).addClass(&apos;someClass&apos;);
+jQuery.log = jQuery.fn.log = function (msg) {
+    if (console){
+        console.log(&quot;%s: %o&quot;, msg, this);
+    }
+    return this;
+};
+</code></pre><h6 id="如何强制在弹出窗口中打开链接"><a href="#如何强制在弹出窗口中打开链接" class="headerlink" title="如何强制在弹出窗口中打开链接"></a>如何强制在弹出窗口中打开链接</h6><pre><code>jQuery(&apos;a.popup&apos;).live(&apos;click&apos;, function(){
+    newwindow=window.open($(this).attr(&apos;href&apos;),&apos;&apos;,&apos;height=200,width=150&apos;);
+    if (window.focus) {
+        newwindow.focus();
+    }
+    return false;
+});
+</code></pre><h6 id="如何强制在新的选项卡中打开链接"><a href="#如何强制在新的选项卡中打开链接" class="headerlink" title="如何强制在新的选项卡中打开链接"></a>如何强制在新的选项卡中打开链接</h6><pre><code>jQuery(&apos;a.newTab&apos;).live(&apos;click&apos;, function(){
+    newwindow=window.open($(this).href);
+    jQuery(this).target = &quot;_blank&quot;;
+    return false;
+});
+</code></pre><h6 id="在jQuery中如何使用-siblings-来选择同辈元素"><a href="#在jQuery中如何使用-siblings-来选择同辈元素" class="headerlink" title="在jQuery中如何使用.siblings()来选择同辈元素"></a>在jQuery中如何使用.siblings()来选择同辈元素</h6><pre><code>// 不这样做
+$(&apos;#nav li&apos;).click(function(){
+    $(&apos;#nav li&apos;).removeClass(&apos;active&apos;);
+    $(this).addClass(&apos;active&apos;);
+});
+
+//替代做法是
+$(&apos;#nav li&apos;).click(function(){
+    $(this).addClass(&apos;active&apos;).siblings().removeClass(&apos;active&apos;);
+});
+</code></pre><h6 id="如何切换页面上的所有复选框"><a href="#如何切换页面上的所有复选框" class="headerlink" title="如何切换页面上的所有复选框"></a>如何切换页面上的所有复选框</h6><pre><code>var tog = false;
+// 或者为true，如果它们在加载时为被选中状态的话
+
+$(&apos;a&apos;).click(function() {
+    $(&quot;input[type=checkbox]&quot;).attr(&quot;checked&quot;,!tog);
+    tog = !tog;
+});
+</code></pre><h6 id="如何基于一些输入文本来过滤一个元素列表"><a href="#如何基于一些输入文本来过滤一个元素列表" class="headerlink" title="如何基于一些输入文本来过滤一个元素列表"></a>如何基于一些输入文本来过滤一个元素列表</h6><pre><code>//如果元素的值和输入的文本相匹配的话
+
+//该元素将被返回
+
+$(&apos;.someClass&apos;).filter(function() {
+    return $(this).attr(&apos;value&apos;) == $(&apos;input#someId&apos;).val();
+})
+</code></pre><h6 id="如何获得鼠标垫光标位置x和y"><a href="#如何获得鼠标垫光标位置x和y" class="headerlink" title="如何获得鼠标垫光标位置x和y"></a>如何获得鼠标垫光标位置x和y</h6><pre><code>$(document).ready(function() {
+    $(document).mousemove(function(e){
+        $(’#XY’).html(”X Axis : ” + e.pageX + ” | Y Axis ” + e.pageY);
+    });
+});
+</code></pre><h6 id="如何把整个的列表元素（List-Element，LI）变成可点击的"><a href="#如何把整个的列表元素（List-Element，LI）变成可点击的" class="headerlink" title="如何把整个的列表元素（List Element，LI）变成可点击的"></a>如何把整个的列表元素（List Element，LI）变成可点击的</h6><pre><code> $(&quot;ul li&quot;).click(function(){
+  window.location=$(this).find(&quot;a&quot;).attr(&quot;href&quot;);
+  return false;
+ });
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><h6 id="如何使用jQuery来解析XML（基本的例子）"><a href="#如何使用jQuery来解析XML（基本的例子）" class="headerlink" title="如何使用jQuery来解析XML（基本的例子）"></a>如何使用jQuery来解析XML（基本的例子）</h6><pre><code> function parseXml(xml) {
+
+//找到每个Tutorial并打印出author
+
+    $(xml).find(&quot;Tutorial&quot;).each(function() {
+        $(&quot;#output&quot;).append($(this).attr(&quot;author&quot;) + &quot;&quot;);
+    });
+}
+</code></pre><h6 id="如何检查图像是否已经被完全加载进来"><a href="#如何检查图像是否已经被完全加载进来" class="headerlink" title="如何检查图像是否已经被完全加载进来"></a>如何检查图像是否已经被完全加载进来</h6><pre><code>$(&apos;#theImage&apos;).attr(&apos;src&apos;, &apos;image.jpg&apos;).load(function() {
+    alert(&apos;This Image Has Been Loaded&apos;);
+});
+</code></pre><h6 id="如何使用jQuery来为事件指定命名空间"><a href="#如何使用jQuery来为事件指定命名空间" class="headerlink" title="如何使用jQuery来为事件指定命名空间"></a>如何使用jQuery来为事件指定命名空间</h6><pre><code> //事件可以这样绑定命名空间
+$(&apos;input&apos;).bind(&apos;blur.validation&apos;, function(e){
+// ...
+
+});
+//data方法也接受命名空间
+
+$(&apos;input&apos;).data(&apos;validation.isValid&apos;, true);
+</code></pre><h6 id="如何检查cookie是否启用"><a href="#如何检查cookie是否启用" class="headerlink" title="如何检查cookie是否启用"></a>如何检查cookie是否启用</h6><pre><code> var dt = new Date();
+dt.setSeconds(dt.getSeconds() + 60);
+document.cookie = &quot;cookietest=1; expires=&quot; + dt.toGMTString();
+var cookiesEnabled = document.cookie.indexOf(&quot;cookietest=&quot;) != -1;
+if(!cookiesEnabled) {
+//没有启用cookie
+
+}
+</code></pre><h6 id="如何让cookie过期"><a href="#如何让cookie过期" class="headerlink" title="如何让cookie过期"></a>如何让cookie过期</h6><pre><code> var date = new Date();
+date.setTime(date.getTime() + (x * 60 * 1000));
+$.cookie(&apos;example&apos;, &apos;foo&apos;, { expires: date });
+</code></pre><h6 id="如何使用一个可点击的链接来替换页面中任何的URL"><a href="#如何使用一个可点击的链接来替换页面中任何的URL" class="headerlink" title="如何使用一个可点击的链接来替换页面中任何的URL"></a>如何使用一个可点击的链接来替换页面中任何的URL</h6><pre><code>$.fn.replaceUrl = function() {
+    var regexp = /((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&amp;%@!\-\/]))?)/gi;
+    this.each(function() {
+        $(this).html(
+            $(this).html().replace(regexp,&apos;&lt;a href=&quot;$1&quot;&gt;$1&lt;/a&gt;‘)
+        );
+    });
+    return $(this);
+}
+//用法　
+$(&apos;p&apos;).replaceUrl();
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/代码片段/" rel="tag">#代码片段</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/13/MarkDown-One/" rel="prev" title="MarkDown 语法入门篇">
+                MarkDown 语法入门篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2016/02/01/50段Jquery代码/"
+     data-title="50个jQuery代码段帮你成为更出色的JS开发者"
+     data-content=""
+     data-url="http://kunn.me/2016/02/01/50段Jquery代码/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/01/50段Jquery代码/"
+           data-title="50个jQuery代码段帮你成为更出色的JS开发者" data-url="http://kunn.me/2016/02/01/50段Jquery代码/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Kunn.me" />
+          <p class="site-author-name" itemprop="name">Kunn.me</p>
+          <p class="site-description motion-element" itemprop="description">郭圳坤的笔记小站</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/kunnn" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/XuDuMe" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+        
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <p class="site-author-name" itemprop="name">QQ: 898551796</p>
+          <img class="site-author-image"  style="max-width:50%;" itemprop="image"
+               src="/images/weixin.jpg"
+               alt="weixin" />
+          <p class="site-description motion-element">快来扫码加我微信好友<br />一起学习交流吧 😃</p>
+        </div>
+       
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#如何创建嵌套的过滤器"><span class="nav-number">1.</span> <span class="nav-text">如何创建嵌套的过滤器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何重用元素搜索"><span class="nav-number">2.</span> <span class="nav-text">如何重用元素搜索</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来切换样式表"><span class="nav-number">3.</span> <span class="nav-text">如何使用jQuery来切换样式表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何限制选择范围（基于优化目的）"><span class="nav-number">4.</span> <span class="nav-text">如何限制选择范围（基于优化目的）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何正确地使用ToggleClass"><span class="nav-number">5.</span> <span class="nav-text">如何正确地使用ToggleClass</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何设置IE特有的功能"><span class="nav-number">6.</span> <span class="nav-text">如何设置IE特有的功能</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来代替一个元素"><span class="nav-number">7.</span> <span class="nav-text">如何使用jQuery来代替一个元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何验证某个元素是否为空"><span class="nav-number">8.</span> <span class="nav-text">如何验证某个元素是否为空</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何从一个未排序的集合中找出某个元素的索引号"><span class="nav-number">9.</span> <span class="nav-text">如何从一个未排序的集合中找出某个元素的索引号</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何把函数绑定到事件上"><span class="nav-number">10.</span> <span class="nav-text">如何把函数绑定到事件上</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何追加或是添加html到元素中"><span class="nav-number">11.</span> <span class="nav-text">如何追加或是添加html到元素中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在创建元素时，如何使用对象字面量（literal）来定义属性"><span class="nav-number">12.</span> <span class="nav-text">在创建元素时，如何使用对象字面量（literal）来定义属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用多个属性来进行过滤"><span class="nav-number">13.</span> <span class="nav-text">如何使用多个属性来进行过滤</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来预加载图像"><span class="nav-number">14.</span> <span class="nav-text">如何使用jQuery来预加载图像</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何为任何与选择器相匹配的元素设置事件处理程序"><span class="nav-number">15.</span> <span class="nav-text">如何为任何与选择器相匹配的元素设置事件处理程序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何找到一个已经被选中的option元素"><span class="nav-number">16.</span> <span class="nav-text">如何找到一个已经被选中的option元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何隐藏一个包含了某个值文本的元素"><span class="nav-number">17.</span> <span class="nav-text">如何隐藏一个包含了某个值文本的元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何自动滚动到页面中的某区域"><span class="nav-number">18.</span> <span class="nav-text">如何自动滚动到页面中的某区域</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何检测各种浏览器"><span class="nav-number">19.</span> <span class="nav-text">如何检测各种浏览器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何替换串中的词"><span class="nav-number">20.</span> <span class="nav-text">如何替换串中的词</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何禁用右键单击上下文菜单"><span class="nav-number">21.</span> <span class="nav-text">如何禁用右键单击上下文菜单</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何定义一个定制的选择器"><span class="nav-number">22.</span> <span class="nav-text">如何定义一个定制的选择器</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何检查某个元素是否存在"><span class="nav-number">23.</span> <span class="nav-text">如何检查某个元素是否存在</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来检测右键和左键的鼠标单击两种情况"><span class="nav-number">24.</span> <span class="nav-text">如何使用jQuery来检测右键和左键的鼠标单击两种情况</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何显示或是删除input域中的默认值"><span class="nav-number">25.</span> <span class="nav-text">如何显示或是删除input域中的默认值</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何在一段时间之后自动隐藏或关闭元素（支持1-4版本）"><span class="nav-number">26.</span> <span class="nav-text">如何在一段时间之后自动隐藏或关闭元素（支持1.4版本）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何把已创建的元素动态地添加到DOM中"><span class="nav-number">27.</span> <span class="nav-text">如何把已创建的元素动态地添加到DOM中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何限制“Text-Area”域中的字符的个数"><span class="nav-number">28.</span> <span class="nav-text">如何限制“Text-Area”域中的字符的个数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何在jQuery中克隆一个元素"><span class="nav-number">29.</span> <span class="nav-text">如何在jQuery中克隆一个元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在jQuery中如何测试某个元素是否可见"><span class="nav-number">30.</span> <span class="nav-text">在jQuery中如何测试某个元素是否可见</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何把一个元素放在屏幕的中心位置"><span class="nav-number">31.</span> <span class="nav-text">如何把一个元素放在屏幕的中心位置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何把有着某个特定名称的所有元素的值都放到一个数组中"><span class="nav-number">32.</span> <span class="nav-text">如何把有着某个特定名称的所有元素的值都放到一个数组中</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何从元素中除去html"><span class="nav-number">33.</span> <span class="nav-text">如何从元素中除去html</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用closest来取得父元素"><span class="nav-number">34.</span> <span class="nav-text">如何使用closest来取得父元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用Firebug和Firefox来记录jQuery事件日志"><span class="nav-number">35.</span> <span class="nav-text">如何使用Firebug和Firefox来记录jQuery事件日志</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何强制在弹出窗口中打开链接"><span class="nav-number">36.</span> <span class="nav-text">如何强制在弹出窗口中打开链接</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何强制在新的选项卡中打开链接"><span class="nav-number">37.</span> <span class="nav-text">如何强制在新的选项卡中打开链接</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#在jQuery中如何使用-siblings-来选择同辈元素"><span class="nav-number">38.</span> <span class="nav-text">在jQuery中如何使用.siblings()来选择同辈元素</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何切换页面上的所有复选框"><span class="nav-number">39.</span> <span class="nav-text">如何切换页面上的所有复选框</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何基于一些输入文本来过滤一个元素列表"><span class="nav-number">40.</span> <span class="nav-text">如何基于一些输入文本来过滤一个元素列表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何获得鼠标垫光标位置x和y"><span class="nav-number">41.</span> <span class="nav-text">如何获得鼠标垫光标位置x和y</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何把整个的列表元素（List-Element，LI）变成可点击的"><span class="nav-number">42.</span> <span class="nav-text">如何把整个的列表元素（List Element，LI）变成可点击的</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来解析XML（基本的例子）"><span class="nav-number">43.</span> <span class="nav-text">如何使用jQuery来解析XML（基本的例子）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何检查图像是否已经被完全加载进来"><span class="nav-number">44.</span> <span class="nav-text">如何检查图像是否已经被完全加载进来</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用jQuery来为事件指定命名空间"><span class="nav-number">45.</span> <span class="nav-text">如何使用jQuery来为事件指定命名空间</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何检查cookie是否启用"><span class="nav-number">46.</span> <span class="nav-text">如何检查cookie是否启用</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何让cookie过期"><span class="nav-number">47.</span> <span class="nav-text">如何让cookie过期</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#如何使用一个可点击的链接来替换页面中任何的URL"><span class="nav-number">48.</span> <span class="nav-text">如何使用一个可点击的链接来替换页面中任何的URL</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <a class="theme-link" href="http://kunn.me"><span class="author" itemprop="copyrightHolder">Kunn.me</span></a>
+</div>
+
+<div class="powered-by">
+库恩-坤
+  
+</div>
+
+<div class="theme-info">
+    努力，只为早一天独当一面。
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"kunn"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
